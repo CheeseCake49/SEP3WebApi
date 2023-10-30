@@ -4,6 +4,7 @@
         <TargetFramework>net7.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>Sep3WebApi</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -12,7 +13,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers\" />
+      <ProjectReference Include="..\Application\Application.csproj" />
+      <ProjectReference Include="..\DataConnection\DataConnection.csproj" />
     </ItemGroup>
 
 </Project>
