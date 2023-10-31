@@ -1,0 +1,19 @@
+﻿syntax = "proto3";
+option java_multiple_files = true;
+package sep3datalayer.grpc.protobuf;
+option csharp_namespace = "sep3client.center";
+
+message CreatingCenter {
+  string name = 1;
+  string location = 2;
+}
+
+message CenterGrpc {
+  int32 id = 1;
+  string name = 2;
+  string location = 3;
+}
+
+service CenterService {
+  rpc CreateCenter(CreatingCenter) returns (CenterGrpc);
+}
