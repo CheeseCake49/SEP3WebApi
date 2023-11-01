@@ -1,40 +1,46 @@
 ﻿using Application.DAOInterfaces;
-using DataConnection.JavaConnection;
+using Grpc.Net.Client;
+using sep3client.center;
 using Shared.Models;
 
 namespace DataConnection.DAOs;
 
 public class CenterDAO : ICenterDAO
 {
-    private readonly GrpcAdapter _adapter;
+    
+    private readonly CenterService.CenterServiceClient _centerService;
 
-    public CenterDAO(GrpcAdapter adapter)
+    public CenterDAO()
     {
-        this._adapter = adapter;
+        var channel = GrpcChannel.ForAddress("https://localhost:7024");
+        _centerService = new CenterService.CenterServiceClient(channel);
     }
 
     public async Task<Center> CreateAsync(Center center)
     {
-        int CenterId = 1;
-        if (_adapter.Centers.Any())
+        CenterGrpc createdCenter = await _centerService.CreateCenterAsync(new CreatingCenter()
         {
-            CenterId = _adapter.Centers.Max(c => c.Id);
-            CenterId++;
-        }
+            Name = center.Name,
+            Location = center.Location
+        });
 
-        center.Id = CenterId;
-
-        _adapter.Centers.Add(center);
-        _adapter.SaveChanges(); //TODO
-
-        return center;
+        Center _center = ConvertToCenter(createdCenter);
+        
+        return _center;
     }
+    
 
-    public Task<Center?> GetByNameAsync(string name)
+      public Task<Center?> GetByNameAsync(string name)
+      {
+          return null;
+          // Center? existing = _centerService.FirstOrDefault(c =>
+          //     c.Name.Equals(name, StringComparison.OrdinalIgnoreCase)
+          // );
+          // return Task.FromResult(existing);
+      }
+
+    public static Center ConvertToCenter(CenterGrpc center)
     {
-        Center? existing = _adapter.Centers.FirstOrDefault(c =>
-            c.Name.Equals(name, StringComparison.OrdinalIgnoreCase)
-        );
-        return Task.FromResult(existing);
+        return center == null ? null : new Center(center.Name, center.Location);
     }
 }

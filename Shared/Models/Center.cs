@@ -6,9 +6,10 @@ public class Center
     public string Name { get; set; }
     public string Location { get; set; }
 
-    public Center(int id, string name, string location)
+    
+    
+    public Center(string name, string location)
     {
-        Id = id;
         Name = name;
         Location = location;
     }

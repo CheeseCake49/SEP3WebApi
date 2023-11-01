@@ -25,17 +25,22 @@ namespace sep3client.center {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Chlwcm90by9DZW50ZXJTZXJ2aWNlLnByb3RvEhtzZXAzZGF0YWxheWVyLmdy",
-            "cGMucHJvdG9idWYiMAoOQ3JlYXRpbmdDZW50ZXISDAoEbmFtZRgBIAEoCRIQ",
-            "Cghsb2NhdGlvbhgCIAEoCSI4CgpDZW50ZXJHcnBjEgoKAmlkGAEgASgFEgwK",
-            "BG5hbWUYAiABKAkSEAoIbG9jYXRpb24YAyABKAkydQoNQ2VudGVyU2Vydmlj",
-            "ZRJkCgxDcmVhdGVDZW50ZXISKy5zZXAzZGF0YWxheWVyLmdycGMucHJvdG9i",
-            "dWYuQ3JlYXRpbmdDZW50ZXIaJy5zZXAzZGF0YWxheWVyLmdycGMucHJvdG9i",
-            "dWYuQ2VudGVyR3JwY0IWUAGqAhFzZXAzY2xpZW50LmNlbnRlcmIGcHJvdG8z"));
+            "cGMucHJvdG9idWYaG2dvb2dsZS9wcm90b2J1Zi9lbXB0eS5wcm90byIwCg5D",
+            "cmVhdGluZ0NlbnRlchIMCgRuYW1lGAEgASgJEhAKCGxvY2F0aW9uGAIgASgJ",
+            "IjgKCkNlbnRlckdycGMSCgoCaWQYASABKAUSDAoEbmFtZRgCIAEoCRIQCghs",
+            "b2NhdGlvbhgDIAEoCSJFCgpDZW50ZXJMaXN0EjcKBmNlbnRlchgBIAMoCzIn",
+            "LnNlcDNkYXRhbGF5ZXIuZ3JwYy5wcm90b2J1Zi5DZW50ZXJHcnBjMsQBCg1D",
+            "ZW50ZXJTZXJ2aWNlEmQKDENyZWF0ZUNlbnRlchIrLnNlcDNkYXRhbGF5ZXIu",
+            "Z3JwYy5wcm90b2J1Zi5DcmVhdGluZ0NlbnRlchonLnNlcDNkYXRhbGF5ZXIu",
+            "Z3JwYy5wcm90b2J1Zi5DZW50ZXJHcnBjEk0KCkdldENlbnRlcnMSFi5nb29n",
+            "bGUucHJvdG9idWYuRW1wdHkaJy5zZXAzZGF0YWxheWVyLmdycGMucHJvdG9i",
+            "dWYuQ2VudGVyTGlzdEIWUAGqAhFzZXAzY2xpZW50LmNlbnRlcmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::sep3client.center.CreatingCenter), global::sep3client.center.CreatingCenter.Parser, new[]{ "Name", "Location" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::sep3client.center.CenterGrpc), global::sep3client.center.CenterGrpc.Parser, new[]{ "Id", "Name", "Location" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::sep3client.center.CenterGrpc), global::sep3client.center.CenterGrpc.Parser, new[]{ "Id", "Name", "Location" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::sep3client.center.CenterList), global::sep3client.center.CenterList.Parser, new[]{ "Center" }, null, null, null, null)
           }));
     }
     #endregion
@@ -522,6 +527,184 @@ namespace sep3client.center {
           }
           case 26: {
             Location = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class CenterList : pb::IMessage<CenterList>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<CenterList> _parser = new pb::MessageParser<CenterList>(() => new CenterList());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<CenterList> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::sep3client.center.CenterServiceReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CenterList() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CenterList(CenterList other) : this() {
+      center_ = other.center_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CenterList Clone() {
+      return new CenterList(this);
+    }
+
+    /// <summary>Field number for the "center" field.</summary>
+    public const int CenterFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::sep3client.center.CenterGrpc> _repeated_center_codec
+        = pb::FieldCodec.ForMessage(10, global::sep3client.center.CenterGrpc.Parser);
+    private readonly pbc::RepeatedField<global::sep3client.center.CenterGrpc> center_ = new pbc::RepeatedField<global::sep3client.center.CenterGrpc>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::sep3client.center.CenterGrpc> Center {
+      get { return center_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as CenterList);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(CenterList other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!center_.Equals(other.center_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= center_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      center_.WriteTo(output, _repeated_center_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      center_.WriteTo(ref output, _repeated_center_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += center_.CalculateSize(_repeated_center_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(CenterList other) {
+      if (other == null) {
+        return;
+      }
+      center_.Add(other.center_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            center_.AddEntriesFrom(input, _repeated_center_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            center_.AddEntriesFrom(ref input, _repeated_center_codec);
             break;
           }
         }
