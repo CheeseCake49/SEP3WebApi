@@ -12,7 +12,7 @@ public class CenterDAO : ICenterDAO
 
     public CenterDAO()
     {
-        var channel = GrpcChannel.ForAddress("https://localhost:7024");
+        var channel = GrpcChannel.ForAddress("https://localhost:7025");
         _centerService = new CenterService.CenterServiceClient(channel);
     }
 
