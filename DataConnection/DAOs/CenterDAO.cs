@@ -23,10 +23,8 @@ public class CenterDAO : ICenterDAO
             Name = center.Name,
             Location = center.Location
         });
-
-        Center _center = ConvertToCenter(createdCenter);
         
-        return _center;
+        return ConvertToCenter(createdCenter);
     }
     
 
