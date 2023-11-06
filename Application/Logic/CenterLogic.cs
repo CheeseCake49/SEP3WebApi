@@ -16,14 +16,8 @@ public class CenterLogic : ICenterLogic
     
     public async Task<Center> CreateAsync(CenterCreationDTO centerToCreate)
     {
-        // Center? existing = await centerDAO.GetByNameAsync(centerToCreate.Name);
-        // if (existing != null)
-        // {
-        //     throw new Exception("Center with that name already exists");
-        // }
-        
         Center toCreate = new Center(centerToCreate.Name, centerToCreate.Location);
-
+        
         Center created = await centerDAO.CreateAsync(toCreate);
 
         return created;

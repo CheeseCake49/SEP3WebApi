@@ -13,5 +13,9 @@ public class Center
         Name = name;
         Location = location;
     }
+
+    public Center()
+    {
+    }
     
 }

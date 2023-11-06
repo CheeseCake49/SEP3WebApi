@@ -12,7 +12,7 @@ public class CenterDAO : ICenterDAO
 
     public CenterDAO()
     {
-        var channel = GrpcChannel.ForAddress("https://localhost:7025");
+        var channel = GrpcChannel.ForAddress("http://localhost:6565");
         _centerService = new CenterService.CenterServiceClient(channel);
     }
 
@@ -41,6 +41,11 @@ public class CenterDAO : ICenterDAO
 
     public static Center ConvertToCenter(CenterGrpc center)
     {
-        return center == null ? null : new Center(center.Name, center.Location);
+        return new Center
+        {
+            Id = center.Id,
+            Name = center.Name,
+            Location = center.Location
+        };
     }
 }
