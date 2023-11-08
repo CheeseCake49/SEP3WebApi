@@ -15,6 +15,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<GrpcAdapter>();
 builder.Services.AddScoped<ICenterDAO, CenterDAO>();
 builder.Services.AddScoped<ICenterLogic, CenterLogic>();
+builder.Services.AddScoped<ICourtDAO, CourtDAO>();
+builder.Services.AddScoped<ICourtLogic, CourtLogic>();
 
 var app = builder.Build();
 

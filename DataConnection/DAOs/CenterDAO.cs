@@ -21,7 +21,9 @@ public class CenterDAO : ICenterDAO
         CenterGrpc createdCenter = await _centerService.CreateCenterAsync(new CreatingCenter()
         {
             Name = center.Name,
-            Location = center.Location
+            ZipCode = center.ZipCode,
+            City = center.City,
+            Address = center.Address
         });
         
         return ConvertToCenter(createdCenter);
@@ -37,13 +39,15 @@ public class CenterDAO : ICenterDAO
           // return Task.FromResult(existing);
       }
 
-    public static Center ConvertToCenter(CenterGrpc center)
+    private Center ConvertToCenter(CenterGrpc center)
     {
         return new Center
         {
             Id = center.Id,
             Name = center.Name,
-            Location = center.Location
+            ZipCode = center.ZipCode,
+            City = center.City,
+            Address = center.Address
         };
     }
 }

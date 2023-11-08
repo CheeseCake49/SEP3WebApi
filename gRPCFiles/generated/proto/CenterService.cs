@@ -25,21 +25,23 @@ namespace sep3client.center {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Chlwcm90by9DZW50ZXJTZXJ2aWNlLnByb3RvEhtzZXAzZGF0YWxheWVyLmdy",
-            "cGMucHJvdG9idWYaG2dvb2dsZS9wcm90b2J1Zi9lbXB0eS5wcm90byIwCg5D",
-            "cmVhdGluZ0NlbnRlchIMCgRuYW1lGAEgASgJEhAKCGxvY2F0aW9uGAIgASgJ",
-            "IjgKCkNlbnRlckdycGMSCgoCaWQYASABKAUSDAoEbmFtZRgCIAEoCRIQCghs",
-            "b2NhdGlvbhgDIAEoCSJFCgpDZW50ZXJMaXN0EjcKBmNlbnRlchgBIAMoCzIn",
-            "LnNlcDNkYXRhbGF5ZXIuZ3JwYy5wcm90b2J1Zi5DZW50ZXJHcnBjMsQBCg1D",
-            "ZW50ZXJTZXJ2aWNlEmQKDENyZWF0ZUNlbnRlchIrLnNlcDNkYXRhbGF5ZXIu",
-            "Z3JwYy5wcm90b2J1Zi5DcmVhdGluZ0NlbnRlchonLnNlcDNkYXRhbGF5ZXIu",
-            "Z3JwYy5wcm90b2J1Zi5DZW50ZXJHcnBjEk0KCkdldENlbnRlcnMSFi5nb29n",
-            "bGUucHJvdG9idWYuRW1wdHkaJy5zZXAzZGF0YWxheWVyLmdycGMucHJvdG9i",
-            "dWYuQ2VudGVyTGlzdEIWUAGqAhFzZXAzY2xpZW50LmNlbnRlcmIGcHJvdG8z"));
+            "cGMucHJvdG9idWYaG2dvb2dsZS9wcm90b2J1Zi9lbXB0eS5wcm90byJOCg5D",
+            "cmVhdGluZ0NlbnRlchIMCgRuYW1lGAEgASgJEg8KB3ppcENvZGUYAiABKAUS",
+            "DAoEY2l0eRgDIAEoCRIPCgdhZGRyZXNzGAQgASgJIlYKCkNlbnRlckdycGMS",
+            "CgoCaWQYASABKAUSDAoEbmFtZRgCIAEoCRIPCgd6aXBDb2RlGAMgASgFEgwK",
+            "BGNpdHkYBCABKAkSDwoHYWRkcmVzcxgFIAEoCSJFCgpDZW50ZXJMaXN0EjcK",
+            "BmNlbnRlchgBIAMoCzInLnNlcDNkYXRhbGF5ZXIuZ3JwYy5wcm90b2J1Zi5D",
+            "ZW50ZXJHcnBjMsQBCg1DZW50ZXJTZXJ2aWNlEmQKDENyZWF0ZUNlbnRlchIr",
+            "LnNlcDNkYXRhbGF5ZXIuZ3JwYy5wcm90b2J1Zi5DcmVhdGluZ0NlbnRlchon",
+            "LnNlcDNkYXRhbGF5ZXIuZ3JwYy5wcm90b2J1Zi5DZW50ZXJHcnBjEk0KCkdl",
+            "dENlbnRlcnMSFi5nb29nbGUucHJvdG9idWYuRW1wdHkaJy5zZXAzZGF0YWxh",
+            "eWVyLmdycGMucHJvdG9idWYuQ2VudGVyTGlzdEIWUAGqAhFzZXAzY2xpZW50",
+            "LmNlbnRlcmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::sep3client.center.CreatingCenter), global::sep3client.center.CreatingCenter.Parser, new[]{ "Name", "Location" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::sep3client.center.CenterGrpc), global::sep3client.center.CenterGrpc.Parser, new[]{ "Id", "Name", "Location" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::sep3client.center.CreatingCenter), global::sep3client.center.CreatingCenter.Parser, new[]{ "Name", "ZipCode", "City", "Address" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::sep3client.center.CenterGrpc), global::sep3client.center.CenterGrpc.Parser, new[]{ "Id", "Name", "ZipCode", "City", "Address" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::sep3client.center.CenterList), global::sep3client.center.CenterList.Parser, new[]{ "Center" }, null, null, null, null)
           }));
     }
@@ -82,7 +84,9 @@ namespace sep3client.center {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CreatingCenter(CreatingCenter other) : this() {
       name_ = other.name_;
-      location_ = other.location_;
+      zipCode_ = other.zipCode_;
+      city_ = other.city_;
+      address_ = other.address_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -104,15 +108,39 @@ namespace sep3client.center {
       }
     }
 
-    /// <summary>Field number for the "location" field.</summary>
-    public const int LocationFieldNumber = 2;
-    private string location_ = "";
+    /// <summary>Field number for the "zipCode" field.</summary>
+    public const int ZipCodeFieldNumber = 2;
+    private int zipCode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Location {
-      get { return location_; }
+    public int ZipCode {
+      get { return zipCode_; }
       set {
-        location_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        zipCode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "city" field.</summary>
+    public const int CityFieldNumber = 3;
+    private string city_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string City {
+      get { return city_; }
+      set {
+        city_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "address" field.</summary>
+    public const int AddressFieldNumber = 4;
+    private string address_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Address {
+      get { return address_; }
+      set {
+        address_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -132,7 +160,9 @@ namespace sep3client.center {
         return true;
       }
       if (Name != other.Name) return false;
-      if (Location != other.Location) return false;
+      if (ZipCode != other.ZipCode) return false;
+      if (City != other.City) return false;
+      if (Address != other.Address) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -141,7 +171,9 @@ namespace sep3client.center {
     public override int GetHashCode() {
       int hash = 1;
       if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (Location.Length != 0) hash ^= Location.GetHashCode();
+      if (ZipCode != 0) hash ^= ZipCode.GetHashCode();
+      if (City.Length != 0) hash ^= City.GetHashCode();
+      if (Address.Length != 0) hash ^= Address.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -164,9 +196,17 @@ namespace sep3client.center {
         output.WriteRawTag(10);
         output.WriteString(Name);
       }
-      if (Location.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(Location);
+      if (ZipCode != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(ZipCode);
+      }
+      if (City.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(City);
+      }
+      if (Address.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Address);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -182,9 +222,17 @@ namespace sep3client.center {
         output.WriteRawTag(10);
         output.WriteString(Name);
       }
-      if (Location.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(Location);
+      if (ZipCode != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(ZipCode);
+      }
+      if (City.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(City);
+      }
+      if (Address.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Address);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -199,8 +247,14 @@ namespace sep3client.center {
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
-      if (Location.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Location);
+      if (ZipCode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ZipCode);
+      }
+      if (City.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(City);
+      }
+      if (Address.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Address);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -217,8 +271,14 @@ namespace sep3client.center {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
-      if (other.Location.Length != 0) {
-        Location = other.Location;
+      if (other.ZipCode != 0) {
+        ZipCode = other.ZipCode;
+      }
+      if (other.City.Length != 0) {
+        City = other.City;
+      }
+      if (other.Address.Length != 0) {
+        Address = other.Address;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -239,8 +299,16 @@ namespace sep3client.center {
             Name = input.ReadString();
             break;
           }
-          case 18: {
-            Location = input.ReadString();
+          case 16: {
+            ZipCode = input.ReadInt32();
+            break;
+          }
+          case 26: {
+            City = input.ReadString();
+            break;
+          }
+          case 34: {
+            Address = input.ReadString();
             break;
           }
         }
@@ -262,8 +330,16 @@ namespace sep3client.center {
             Name = input.ReadString();
             break;
           }
-          case 18: {
-            Location = input.ReadString();
+          case 16: {
+            ZipCode = input.ReadInt32();
+            break;
+          }
+          case 26: {
+            City = input.ReadString();
+            break;
+          }
+          case 34: {
+            Address = input.ReadString();
             break;
           }
         }
@@ -309,7 +385,9 @@ namespace sep3client.center {
     public CenterGrpc(CenterGrpc other) : this() {
       id_ = other.id_;
       name_ = other.name_;
-      location_ = other.location_;
+      zipCode_ = other.zipCode_;
+      city_ = other.city_;
+      address_ = other.address_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -343,15 +421,39 @@ namespace sep3client.center {
       }
     }
 
-    /// <summary>Field number for the "location" field.</summary>
-    public const int LocationFieldNumber = 3;
-    private string location_ = "";
+    /// <summary>Field number for the "zipCode" field.</summary>
+    public const int ZipCodeFieldNumber = 3;
+    private int zipCode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Location {
-      get { return location_; }
+    public int ZipCode {
+      get { return zipCode_; }
       set {
-        location_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        zipCode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "city" field.</summary>
+    public const int CityFieldNumber = 4;
+    private string city_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string City {
+      get { return city_; }
+      set {
+        city_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "address" field.</summary>
+    public const int AddressFieldNumber = 5;
+    private string address_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Address {
+      get { return address_; }
+      set {
+        address_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -372,7 +474,9 @@ namespace sep3client.center {
       }
       if (Id != other.Id) return false;
       if (Name != other.Name) return false;
-      if (Location != other.Location) return false;
+      if (ZipCode != other.ZipCode) return false;
+      if (City != other.City) return false;
+      if (Address != other.Address) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -382,7 +486,9 @@ namespace sep3client.center {
       int hash = 1;
       if (Id != 0) hash ^= Id.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (Location.Length != 0) hash ^= Location.GetHashCode();
+      if (ZipCode != 0) hash ^= ZipCode.GetHashCode();
+      if (City.Length != 0) hash ^= City.GetHashCode();
+      if (Address.Length != 0) hash ^= Address.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -409,9 +515,17 @@ namespace sep3client.center {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (Location.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Location);
+      if (ZipCode != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(ZipCode);
+      }
+      if (City.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(City);
+      }
+      if (Address.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Address);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -431,9 +545,17 @@ namespace sep3client.center {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (Location.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Location);
+      if (ZipCode != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(ZipCode);
+      }
+      if (City.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(City);
+      }
+      if (Address.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Address);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -451,8 +573,14 @@ namespace sep3client.center {
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
-      if (Location.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Location);
+      if (ZipCode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ZipCode);
+      }
+      if (City.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(City);
+      }
+      if (Address.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Address);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -472,8 +600,14 @@ namespace sep3client.center {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
-      if (other.Location.Length != 0) {
-        Location = other.Location;
+      if (other.ZipCode != 0) {
+        ZipCode = other.ZipCode;
+      }
+      if (other.City.Length != 0) {
+        City = other.City;
+      }
+      if (other.Address.Length != 0) {
+        Address = other.Address;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -498,8 +632,16 @@ namespace sep3client.center {
             Name = input.ReadString();
             break;
           }
-          case 26: {
-            Location = input.ReadString();
+          case 24: {
+            ZipCode = input.ReadInt32();
+            break;
+          }
+          case 34: {
+            City = input.ReadString();
+            break;
+          }
+          case 42: {
+            Address = input.ReadString();
             break;
           }
         }
@@ -525,8 +667,16 @@ namespace sep3client.center {
             Name = input.ReadString();
             break;
           }
-          case 26: {
-            Location = input.ReadString();
+          case 24: {
+            ZipCode = input.ReadInt32();
+            break;
+          }
+          case 34: {
+            City = input.ReadString();
+            break;
+          }
+          case 42: {
+            Address = input.ReadString();
             break;
           }
         }
