@@ -9,11 +9,11 @@ namespace Sep3WebApi.Controllers;
 [Route("[controller]")]
 public class CenterController : ControllerBase
 {
-    private readonly ICenterLogic centerLogic;
+    private readonly ICenterLogic _centerLogic;
 
     public CenterController(ICenterLogic centerLogic)
     {
-        this.centerLogic = centerLogic;
+        _centerLogic = centerLogic;
     }
 
     [HttpPost]
@@ -21,8 +21,8 @@ public class CenterController : ControllerBase
     {
         try
         {
-            Center center = await centerLogic.CreateAsync(dto);
-            return Created($"/center/{center.Id}", center);
+            Center center = await _centerLogic.CreateAsync(dto);
+            return Created($"/Center/{center.Id}", center);
         }
         catch (Exception e)
         {
