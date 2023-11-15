@@ -31,4 +31,18 @@ public class CenterController : ControllerBase
         }
     }
 
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<Center>>> GetCentersAsync()
+    {
+        try
+        {
+            IEnumerable<Center> centers = await _centerLogic.GetCentersAsync();
+            return Ok(centers);
+        } catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(500, e.Message);
+        }
+    }
+
 }

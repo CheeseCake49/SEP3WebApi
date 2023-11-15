@@ -32,5 +32,9 @@ public class CenterLogic : ICenterLogic
 
         return created;
     }
-    
+
+    public async Task<IEnumerable<Center>> GetCentersAsync()
+    {
+        return await centerDAO.getCentersAsync();
+    }
 }

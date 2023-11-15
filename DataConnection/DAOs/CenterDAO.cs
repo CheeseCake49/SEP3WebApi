@@ -1,4 +1,5 @@
 ﻿using Application.DAOInterfaces;
+using Google.Protobuf.WellKnownTypes;
 using Grpc.Net.Client;
 using sep3client.center;
 using Shared.Models;
@@ -28,9 +29,21 @@ public class CenterDAO : ICenterDAO
         
         return ConvertToCenter(createdCenter);
     }
-    
 
-      public Task<Center?> GetByNameAsync(string name)
+    public async Task<IEnumerable<Center>> getCentersAsync()
+    {
+        CenterList centerList = await _centerService.GetCentersAsync(new Empty());
+        List<Center> list = new();
+        
+        foreach (CenterGrpc centerGrpc in centerList.Center)
+        {
+            list.Add(ConvertToCenter(centerGrpc));
+        }
+        return list;
+    }
+
+
+    public Task<Center?> GetByNameAsync(string name)
       {
           return null;
           // Center? existing = _centerService.FirstOrDefault(c =>
@@ -39,6 +52,8 @@ public class CenterDAO : ICenterDAO
           // return Task.FromResult(existing);
       }
 
+      
+      
     private Center ConvertToCenter(CenterGrpc center)
     {
         return new Center
