@@ -29,7 +29,16 @@ public class CourtDAO : ICourtDAO
         return ConvertToCourt(createdCourt);
     }
 
-    private Court ConvertToCourt(CourtGrpc court)
+    public async Task<IEnumerable<Court>> GetCourtsByCenterID(int centerID)
+    {
+        var courts = await _courtService.GetCourtsFromCenterIdAsync(new CenterId()
+        {
+            Id = centerID
+        });
+        return courts.Court.Select(ConvertToCourt);
+    }
+
+    private static Court ConvertToCourt(CourtGrpc court)
     {
         return new Court()
         {

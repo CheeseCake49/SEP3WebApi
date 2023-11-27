@@ -24,24 +24,18 @@ public class CenterDAO : ICenterDAO
             Name = center.Name,
             ZipCode = center.ZipCode,
             City = center.City,
-            Address = center.Address
+            Address = center.Address,
         });
         
         return ConvertToCenter(createdCenter);
     }
 
-    public async Task<IEnumerable<Center>> getCentersAsync()
+    public async Task<IEnumerable<Center>> GetAllCentersAsync()
     {
-        CenterList centerList = await _centerService.GetCentersAsync(new Empty());
-        List<Center> list = new();
-        
-        foreach (CenterGrpc centerGrpc in centerList.Center)
-        {
-            list.Add(ConvertToCenter(centerGrpc));
-        }
-        return list;
+        var centers = await _centerService.GetCentersAsync(new Empty());
+        return centers.Center.Select(ConvertToCenter);
     }
-
+    
 
     public Task<Center?> GetByNameAsync(string name)
       {
@@ -51,10 +45,8 @@ public class CenterDAO : ICenterDAO
           // );
           // return Task.FromResult(existing);
       }
-
       
-      
-    private Center ConvertToCenter(CenterGrpc center)
+    private static Center ConvertToCenter(CenterGrpc center)
     {
         return new Center
         {

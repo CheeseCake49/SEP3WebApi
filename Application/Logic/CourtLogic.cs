@@ -20,4 +20,9 @@ public class CourtLogic : ICourtLogic
 
         return await courtDAO.CreateAsync(toCreate);
     }
+
+    public async Task<IEnumerable<Court>> GetCourtsByCenterID(int centerID)
+    {
+        return await courtDAO.GetCourtsByCenterID(centerID);
+    }
 }

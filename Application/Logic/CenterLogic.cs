@@ -13,6 +13,7 @@ public class CenterLogic : ICenterLogic
     public CenterLogic(ICenterDAO centerDao, ICourtLogic courtLogic)
     {
         this.centerDAO = centerDao;
+        this.CourtLogic = courtLogic;
     }
     
     public async Task<Center> CreateAsync(CenterCreationDTO centerToCreate)
@@ -33,8 +34,17 @@ public class CenterLogic : ICenterLogic
         return created;
     }
 
-    public async Task<IEnumerable<Center>> GetCentersAsync()
+    public async Task<IEnumerable<Center>> GetAllCentersAsync()
     {
-        return await centerDAO.getCentersAsync();
+        IEnumerable<Court> courts = new List<Court>();
+        IEnumerable<Center> centers = await centerDAO.GetAllCentersAsync();
+
+        foreach (Center center in centers)
+        {
+            courts = await CourtLogic.GetCourtsByCenterID(center.Id);
+            center.Courts = courts.ToList();
+        }
+
+        return centers;
     }
 }
