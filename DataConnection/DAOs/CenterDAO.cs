@@ -30,10 +30,15 @@ public class CenterDAO : ICenterDAO
         return ConvertToCenter(createdCenter);
     }
 
-    public async Task<IEnumerable<Center>> GetAllCentersAsync()
+    public async Task<List<Center>> GetAllCentersAsync()
     {
         var centers = await _centerService.GetCentersAsync(new Empty());
-        return centers.Center.Select(ConvertToCenter);
+        List<Center> centerList = new();
+        for (int i = 0; i < centers.Center.Count; i++)
+        {
+            centerList.Add(ConvertToCenter(centers.Center[i]));
+        }
+        return centerList;
     }
     
 
@@ -46,7 +51,7 @@ public class CenterDAO : ICenterDAO
           // return Task.FromResult(existing);
       }
       
-    private static Center ConvertToCenter(CenterGrpc center)
+    private Center ConvertToCenter(CenterGrpc center)
     {
         return new Center
         {
