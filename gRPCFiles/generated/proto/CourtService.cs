@@ -32,19 +32,24 @@ namespace sep3client.court {
             "EQoJY291cnRUeXBlGAMgASgJEhMKC2NvdXJ0TnVtYmVyGAQgASgFEhQKDGNv",
             "dXJ0U3BvbnNvchgFIAEoCSJCCglDb3VydExpc3QSNQoFY291cnQYASADKAsy",
             "Ji5zZXAzZGF0YWxheWVyLmdycGMucHJvdG9idWYuQ291cnRHcnBjIhYKCENl",
-            "bnRlcklkEgoKAmlkGAEgASgFMtkBCgxDb3VydFNlcnZpY2USYQoLQ3JlYXRl",
-            "Q291cnQSKi5zZXAzZGF0YWxheWVyLmdycGMucHJvdG9idWYuQ3JlYXRpbmdD",
-            "b3VydBomLnNlcDNkYXRhbGF5ZXIuZ3JwYy5wcm90b2J1Zi5Db3VydEdycGMS",
-            "ZgoVR2V0Q291cnRzRnJvbUNlbnRlcklkEiUuc2VwM2RhdGFsYXllci5ncnBj",
-            "LnByb3RvYnVmLkNlbnRlcklkGiYuc2VwM2RhdGFsYXllci5ncnBjLnByb3Rv",
-            "YnVmLkNvdXJ0TGlzdEIVUAGqAhBzZXAzY2xpZW50LmNvdXJ0YgZwcm90bzM="));
+            "bnRlcklkEgoKAmlkGAEgASgFIjYKDUNvdXJ0RGVsZXRpb24SEAoIY2VudGVy",
+            "SWQYASABKAUSEwoLY291cnROdW1iZXIYAiABKAUyuAIKDENvdXJ0U2Vydmlj",
+            "ZRJhCgtDcmVhdGVDb3VydBIqLnNlcDNkYXRhbGF5ZXIuZ3JwYy5wcm90b2J1",
+            "Zi5DcmVhdGluZ0NvdXJ0GiYuc2VwM2RhdGFsYXllci5ncnBjLnByb3RvYnVm",
+            "LkNvdXJ0R3JwYxJmChVHZXRDb3VydHNGcm9tQ2VudGVySWQSJS5zZXAzZGF0",
+            "YWxheWVyLmdycGMucHJvdG9idWYuQ2VudGVySWQaJi5zZXAzZGF0YWxheWVy",
+            "LmdycGMucHJvdG9idWYuQ291cnRMaXN0El0KF0RlbGV0ZUNvdXJ0RnJvbUNl",
+            "bnRlcklkEiouc2VwM2RhdGFsYXllci5ncnBjLnByb3RvYnVmLkNvdXJ0RGVs",
+            "ZXRpb24aFi5nb29nbGUucHJvdG9idWYuRW1wdHlCFVABqgIQc2VwM2NsaWVu",
+            "dC5jb3VydGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::sep3client.court.CreatingCourt), global::sep3client.court.CreatingCourt.Parser, new[]{ "CenterId", "CourtType", "CourtNumber", "CourtSponsor" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::sep3client.court.CourtGrpc), global::sep3client.court.CourtGrpc.Parser, new[]{ "Id", "CenterId", "CourtType", "CourtNumber", "CourtSponsor" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::sep3client.court.CourtList), global::sep3client.court.CourtList.Parser, new[]{ "Court" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::sep3client.court.CenterId), global::sep3client.court.CenterId.Parser, new[]{ "Id" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::sep3client.court.CenterId), global::sep3client.court.CenterId.Parser, new[]{ "Id" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::sep3client.court.CourtDeletion), global::sep3client.court.CourtDeletion.Parser, new[]{ "CenterId", "CourtNumber" }, null, null, null, null)
           }));
     }
     #endregion
@@ -1046,6 +1051,232 @@ namespace sep3client.court {
             break;
           case 8: {
             Id = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class CourtDeletion : pb::IMessage<CourtDeletion>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<CourtDeletion> _parser = new pb::MessageParser<CourtDeletion>(() => new CourtDeletion());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<CourtDeletion> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::sep3client.court.CourtServiceReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CourtDeletion() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CourtDeletion(CourtDeletion other) : this() {
+      centerId_ = other.centerId_;
+      courtNumber_ = other.courtNumber_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CourtDeletion Clone() {
+      return new CourtDeletion(this);
+    }
+
+    /// <summary>Field number for the "centerId" field.</summary>
+    public const int CenterIdFieldNumber = 1;
+    private int centerId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CenterId {
+      get { return centerId_; }
+      set {
+        centerId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "courtNumber" field.</summary>
+    public const int CourtNumberFieldNumber = 2;
+    private int courtNumber_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CourtNumber {
+      get { return courtNumber_; }
+      set {
+        courtNumber_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as CourtDeletion);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(CourtDeletion other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (CenterId != other.CenterId) return false;
+      if (CourtNumber != other.CourtNumber) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (CenterId != 0) hash ^= CenterId.GetHashCode();
+      if (CourtNumber != 0) hash ^= CourtNumber.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (CenterId != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(CenterId);
+      }
+      if (CourtNumber != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(CourtNumber);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (CenterId != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(CenterId);
+      }
+      if (CourtNumber != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(CourtNumber);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (CenterId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(CenterId);
+      }
+      if (CourtNumber != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(CourtNumber);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(CourtDeletion other) {
+      if (other == null) {
+        return;
+      }
+      if (other.CenterId != 0) {
+        CenterId = other.CenterId;
+      }
+      if (other.CourtNumber != 0) {
+        CourtNumber = other.CourtNumber;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            CenterId = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            CourtNumber = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            CenterId = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            CourtNumber = input.ReadInt32();
             break;
           }
         }

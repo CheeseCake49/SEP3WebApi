@@ -20,4 +20,11 @@ public class CourtLogic : ICourtLogic
 
         return await courtDAO.CreateAsync(toCreate);
     }
+
+    public async Task DeleteAsync(CourtDeletionDTO dto)
+    {
+        await courtDAO.DeleteAsync(dto.CenterId, dto.CourtNumber);
+    }
+
+    
 }

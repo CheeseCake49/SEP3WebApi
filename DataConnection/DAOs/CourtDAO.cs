@@ -29,6 +29,15 @@ public class CourtDAO : ICourtDAO
         return ConvertToCourt(createdCourt);
     }
 
+    public async Task DeleteAsync(int centerId, int courtNumber)
+    {
+        await _courtService.DeleteCourtFromCenterIdAsync(new CourtDeletion()
+        {
+            CenterId = centerId,
+            CourtNumber = courtNumber
+        });
+    }
+
     private Court ConvertToCourt(CourtGrpc court)
     {
         return new Court()

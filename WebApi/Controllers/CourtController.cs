@@ -1,4 +1,5 @@
 using Application.LogicInterfaces;
+using Grpc.Core;
 using Microsoft.AspNetCore.Mvc;
 using Shared.DTOs;
 using Shared.Models;
@@ -32,4 +33,23 @@ public class CourtController : ControllerBase
         }
     }
 
+    [HttpDelete]
+    public async Task<ActionResult> DeleteAsync([FromBody] CourtDeletionDTO courtDeletionDto)
+    {
+        try
+        {
+            await _courtLogic.DeleteAsync(courtDeletionDto);
+            return Ok();
+        }
+        catch (RpcException e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(500, e.Status.Detail);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(500, e.Message);
+        }
+    }
 }

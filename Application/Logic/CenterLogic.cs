@@ -13,6 +13,7 @@ public class CenterLogic : ICenterLogic
     public CenterLogic(ICenterDAO centerDao, ICourtLogic courtLogic)
     {
         this.centerDAO = centerDao;
+        this.CourtLogic = courtLogic;
     }
     
     public async Task<Center> CreateAsync(CenterCreationDTO centerToCreate)

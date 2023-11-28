@@ -53,6 +53,10 @@ namespace sep3client.court {
     static readonly grpc::Marshaller<global::sep3client.court.CenterId> __Marshaller_sep3datalayer_grpc_protobuf_CenterId = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::sep3client.court.CenterId.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::sep3client.court.CourtList> __Marshaller_sep3datalayer_grpc_protobuf_CourtList = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::sep3client.court.CourtList.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::sep3client.court.CourtDeletion> __Marshaller_sep3datalayer_grpc_protobuf_CourtDeletion = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::sep3client.court.CourtDeletion.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Google.Protobuf.WellKnownTypes.Empty> __Marshaller_google_protobuf_Empty = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Protobuf.WellKnownTypes.Empty.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::sep3client.court.CreatingCourt, global::sep3client.court.CourtGrpc> __Method_CreateCourt = new grpc::Method<global::sep3client.court.CreatingCourt, global::sep3client.court.CourtGrpc>(
@@ -69,6 +73,14 @@ namespace sep3client.court {
         "GetCourtsFromCenterId",
         __Marshaller_sep3datalayer_grpc_protobuf_CenterId,
         __Marshaller_sep3datalayer_grpc_protobuf_CourtList);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::sep3client.court.CourtDeletion, global::Google.Protobuf.WellKnownTypes.Empty> __Method_DeleteCourtFromCenterId = new grpc::Method<global::sep3client.court.CourtDeletion, global::Google.Protobuf.WellKnownTypes.Empty>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "DeleteCourtFromCenterId",
+        __Marshaller_sep3datalayer_grpc_protobuf_CourtDeletion,
+        __Marshaller_google_protobuf_Empty);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -88,6 +100,12 @@ namespace sep3client.court {
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::sep3client.court.CourtList> GetCourtsFromCenterId(global::sep3client.court.CenterId request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::Google.Protobuf.WellKnownTypes.Empty> DeleteCourtFromCenterId(global::sep3client.court.CourtDeletion request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -161,6 +179,26 @@ namespace sep3client.court {
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetCourtsFromCenterId, null, options, request);
       }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Google.Protobuf.WellKnownTypes.Empty DeleteCourtFromCenterId(global::sep3client.court.CourtDeletion request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return DeleteCourtFromCenterId(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Google.Protobuf.WellKnownTypes.Empty DeleteCourtFromCenterId(global::sep3client.court.CourtDeletion request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_DeleteCourtFromCenterId, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Google.Protobuf.WellKnownTypes.Empty> DeleteCourtFromCenterIdAsync(global::sep3client.court.CourtDeletion request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return DeleteCourtFromCenterIdAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Google.Protobuf.WellKnownTypes.Empty> DeleteCourtFromCenterIdAsync(global::sep3client.court.CourtDeletion request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_DeleteCourtFromCenterId, null, options, request);
+      }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       protected override CourtServiceClient NewInstance(ClientBaseConfiguration configuration)
@@ -176,7 +214,8 @@ namespace sep3client.court {
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_CreateCourt, serviceImpl.CreateCourt)
-          .AddMethod(__Method_GetCourtsFromCenterId, serviceImpl.GetCourtsFromCenterId).Build();
+          .AddMethod(__Method_GetCourtsFromCenterId, serviceImpl.GetCourtsFromCenterId)
+          .AddMethod(__Method_DeleteCourtFromCenterId, serviceImpl.DeleteCourtFromCenterId).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -188,6 +227,7 @@ namespace sep3client.court {
     {
       serviceBinder.AddMethod(__Method_CreateCourt, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::sep3client.court.CreatingCourt, global::sep3client.court.CourtGrpc>(serviceImpl.CreateCourt));
       serviceBinder.AddMethod(__Method_GetCourtsFromCenterId, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::sep3client.court.CenterId, global::sep3client.court.CourtList>(serviceImpl.GetCourtsFromCenterId));
+      serviceBinder.AddMethod(__Method_DeleteCourtFromCenterId, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::sep3client.court.CourtDeletion, global::Google.Protobuf.WellKnownTypes.Empty>(serviceImpl.DeleteCourtFromCenterId));
     }
 
   }

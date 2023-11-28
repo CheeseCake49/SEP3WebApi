@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataConnection", "DataConne
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gRPCFiles", "gRPCFiles\gRPCFiles.csproj", "{6D488902-238F-42BD-A760-1A9535C9B97E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{4D3AC93E-F03F-4241-AC2B-CED6001AB57B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{6D488902-238F-42BD-A760-1A9535C9B97E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D488902-238F-42BD-A760-1A9535C9B97E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D488902-238F-42BD-A760-1A9535C9B97E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D3AC93E-F03F-4241-AC2B-CED6001AB57B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D3AC93E-F03F-4241-AC2B-CED6001AB57B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D3AC93E-F03F-4241-AC2B-CED6001AB57B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D3AC93E-F03F-4241-AC2B-CED6001AB57B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
