@@ -6,6 +6,6 @@ namespace Application.LogicInterfaces;
 public interface ICourtLogic
 {
     Task<Court> CreateAsync(int CenterId, CourtCreationDTO courtToCreate);
-    Task DeleteAsync(CourtDeletionDTO court);
+    Task DeleteAsync(int centerId, int courtNumber);
     Task<List<Court>> GetCourtsByCenterID(int centerID);
 }

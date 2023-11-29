@@ -49,12 +49,12 @@ public class CourtController : ControllerBase
         }
     }
 
-    [HttpDelete]
-    public async Task<ActionResult> DeleteAsync([FromBody] CourtDeletionDTO courtDeletionDto)
+    [HttpDelete("/court/{centerId:int}/{courtNumber:int}")]
+    public async Task<ActionResult> DeleteAsync([FromRoute] int centerId, [FromRoute] int courtNumber)
     {
         try
         {
-            await _courtLogic.DeleteAsync(courtDeletionDto);
+            await _courtLogic.DeleteAsync(centerId, courtNumber);
             return Ok();
         }
         catch (RpcException e)
