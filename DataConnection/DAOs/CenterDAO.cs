@@ -34,8 +34,7 @@ public class CenterDAO : ICenterDAO
     {
         var centers = await _centerService.GetCentersAsync(new Empty());
         List<Center> centerList = new();
-        for (int i = 0; i < centers.Center.Count; i++)
-        {
+        for (int i = 0; i < centers.Center.Count; i++) {
             centerList.Add(ConvertToCenter(centers.Center[i]));
         }
         return centerList;
