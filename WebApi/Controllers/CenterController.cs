@@ -36,9 +36,10 @@ public class CenterController : ControllerBase
     {
         try
         {
-            IEnumerable<Center> centers = await _centerLogic.GetCentersAsync();
+            var centers = await _centerLogic.GetAllCentersAsync();
             return Ok(centers);
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             Console.WriteLine(e);
             return StatusCode(500, e.Message);

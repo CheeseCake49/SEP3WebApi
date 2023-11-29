@@ -38,6 +38,20 @@ public class CourtDAO : ICourtDAO
         });
     }
 
+    public async Task<List<Court>> GetCourtsByCenterID(int centerID)
+    {
+        var courts = await _courtService.GetCourtsFromCenterIdAsync(new CenterId()
+        {
+            Id = centerID
+        });
+        List<Court> courtList = new();
+        for (int i = 0; i < courts.Court.Count; i++)
+        {
+            courtList.Add(ConvertToCourt(courts.Court[i]));
+        }
+        return courtList;
+    }
+
     private Court ConvertToCourt(CourtGrpc court)
     {
         return new Court()

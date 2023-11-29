@@ -27,4 +27,10 @@ public class CourtLogic : ICourtLogic
     }
 
     
+
+    public async Task<List<Court>> GetCourtsByCenterID(int centerID)
+    {
+        return await courtDAO.GetCourtsByCenterID(centerID);
+    }
+    
 }
