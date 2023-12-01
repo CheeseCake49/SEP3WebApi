@@ -18,8 +18,8 @@ public class CourtController : ControllerBase
         _courtLogic = courtLogic;
     }
 
-    [HttpPost]
-    public async Task<ActionResult<Court>> CreateAsync(int centerId, CourtCreationDTO dto)
+    [HttpPost("/court/{centerId:int}")]
+    public async Task<ActionResult<Court>> CreateAsync([FromRoute] int centerId, [FromBody] CourtCreationDTO dto)
     {
         try
         {
