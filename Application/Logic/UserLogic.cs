@@ -16,7 +16,6 @@ public class UserLogic : IUserLogic
 
     public async Task<User> CreateAsync(UserCreationDTO userToCreate)
     {
-        ValidateData(userToCreate);
         User toCreate = new User(userToCreate.Username, userToCreate.Password, userToCreate.Email, userToCreate.Name, userToCreate.Role);
         
         return await _userDao.CreateAsync(toCreate);
@@ -29,15 +28,5 @@ public class UserLogic : IUserLogic
         return users;
     }
     
-    private static void ValidateData(UserCreationDTO userToCreate)
-    {
-        string username = userToCreate.Username;
-
-        if (username.Length < 3)
-            throw new Exception("Username must be at least 3 characters");
-
-        if (username.Length > 15)
-            throw new Exception("Username must be less than 16 characters");
-    }
     
 }
