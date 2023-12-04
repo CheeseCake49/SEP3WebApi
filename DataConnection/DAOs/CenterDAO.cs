@@ -30,6 +30,14 @@ public class CenterDAO : ICenterDAO
         return ConvertToCenter(createdCenter);
     }
 
+    public async Task DeleteAsync(int id)
+    {
+        await _centerService.DeleteCenterAsync(new CenterId()
+        {
+            Id = id
+        });
+    }
+
     public async Task<List<Center>> GetAllCentersAsync()
     {
         var centers = await _centerService.GetCentersAsync(new Empty());

@@ -50,6 +50,8 @@ namespace sep3client.center {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::sep3client.center.CenterGrpc> __Marshaller_sep3datalayer_grpc_protobuf_CenterGrpc = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::sep3client.center.CenterGrpc.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::sep3client.center.CenterId> __Marshaller_sep3datalayer_grpc_protobuf_CenterId = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::sep3client.center.CenterId.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::Google.Protobuf.WellKnownTypes.Empty> __Marshaller_google_protobuf_Empty = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Protobuf.WellKnownTypes.Empty.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::sep3client.center.CenterList> __Marshaller_sep3datalayer_grpc_protobuf_CenterList = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::sep3client.center.CenterList.Parser));
@@ -61,6 +63,14 @@ namespace sep3client.center {
         "CreateCenter",
         __Marshaller_sep3datalayer_grpc_protobuf_CreatingCenter,
         __Marshaller_sep3datalayer_grpc_protobuf_CenterGrpc);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::sep3client.center.CenterId, global::Google.Protobuf.WellKnownTypes.Empty> __Method_DeleteCenter = new grpc::Method<global::sep3client.center.CenterId, global::Google.Protobuf.WellKnownTypes.Empty>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "DeleteCenter",
+        __Marshaller_sep3datalayer_grpc_protobuf_CenterId,
+        __Marshaller_google_protobuf_Empty);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::sep3client.center.CenterList> __Method_GetCenters = new grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::sep3client.center.CenterList>(
@@ -82,6 +92,12 @@ namespace sep3client.center {
     {
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::sep3client.center.CenterGrpc> CreateCenter(global::sep3client.center.CreatingCenter request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::Google.Protobuf.WellKnownTypes.Empty> DeleteCenter(global::sep3client.center.CenterId request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -142,6 +158,26 @@ namespace sep3client.center {
         return CallInvoker.AsyncUnaryCall(__Method_CreateCenter, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Google.Protobuf.WellKnownTypes.Empty DeleteCenter(global::sep3client.center.CenterId request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return DeleteCenter(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Google.Protobuf.WellKnownTypes.Empty DeleteCenter(global::sep3client.center.CenterId request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_DeleteCenter, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Google.Protobuf.WellKnownTypes.Empty> DeleteCenterAsync(global::sep3client.center.CenterId request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return DeleteCenterAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Google.Protobuf.WellKnownTypes.Empty> DeleteCenterAsync(global::sep3client.center.CenterId request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_DeleteCenter, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::sep3client.center.CenterList GetCenters(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetCenters(request, new grpc::CallOptions(headers, deadline, cancellationToken));
@@ -176,6 +212,7 @@ namespace sep3client.center {
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_CreateCenter, serviceImpl.CreateCenter)
+          .AddMethod(__Method_DeleteCenter, serviceImpl.DeleteCenter)
           .AddMethod(__Method_GetCenters, serviceImpl.GetCenters).Build();
     }
 
@@ -187,6 +224,7 @@ namespace sep3client.center {
     public static void BindService(grpc::ServiceBinderBase serviceBinder, CenterServiceBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_CreateCenter, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::sep3client.center.CreatingCenter, global::sep3client.center.CenterGrpc>(serviceImpl.CreateCenter));
+      serviceBinder.AddMethod(__Method_DeleteCenter, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::sep3client.center.CenterId, global::Google.Protobuf.WellKnownTypes.Empty>(serviceImpl.DeleteCenter));
       serviceBinder.AddMethod(__Method_GetCenters, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Protobuf.WellKnownTypes.Empty, global::sep3client.center.CenterList>(serviceImpl.GetCenters));
     }
 

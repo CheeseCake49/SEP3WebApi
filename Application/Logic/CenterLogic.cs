@@ -36,6 +36,11 @@ public class CenterLogic : ICenterLogic
         return created;
     }
 
+    public async Task DeleteAsync(int id)
+    {
+        await _centerDao.DeleteAsync(id);
+    }
+
     public async Task<IEnumerable<Center>> GetAllCentersAsync()
     {
         List<Court> courts;

@@ -1,4 +1,5 @@
 ﻿using Application.LogicInterfaces;
+using Grpc.Core;
 using Microsoft.AspNetCore.Mvc;
 using Shared.DTOs;
 using Shared.Models;
@@ -23,6 +24,26 @@ public class CenterController : ControllerBase
         {
             Center center = await _centerLogic.CreateAsync(dto);
             return Created($"/Center/{center.Id}", center);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(500, e.Message);
+        }
+    }
+    
+    [HttpDelete("/center/{id:int}")]
+    public async Task<ActionResult> DeleteAsync([FromRoute] int id)
+    {
+        try
+        {
+            await _centerLogic.DeleteAsync(id);
+            return Ok();
+        }
+        catch (RpcException e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(500, e.Status.Detail);
         }
         catch (Exception e)
         {
