@@ -1,7 +1,12 @@
+using System.Text;
 using Application.DAOInterfaces;
 using Application.Logic;
 using Application.LogicInterfaces;
 using DataConnection.DAOs;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using Sep3WebApi.Services;
+using Shared.Auth;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +20,25 @@ builder.Services.AddScoped<ICenterDAO, CenterDAO>();
 builder.Services.AddScoped<ICenterLogic, CenterLogic>();
 builder.Services.AddScoped<ICourtDAO, CourtDAO>();
 builder.Services.AddScoped<ICourtLogic, CourtLogic>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IUserDAO, UserDAO>();
+builder.Services.AddScoped<IUserLogic, UserLogic>();
+
+AuthorizationPolicies.AddPolicies(builder.Services);
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+{
+    options.RequireHttpsMetadata = false;
+    options.SaveToken = true;
+    options.TokenValidationParameters = new TokenValidationParameters()
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidAudience = builder.Configuration["Jwt:Audience"],
+        ValidIssuer = builder.Configuration["Jwt:Issuer"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+    };
+});
 
 var app = builder.Build();
 
@@ -33,6 +57,8 @@ app.UseCors(x => x
     .AllowCredentials());
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 
