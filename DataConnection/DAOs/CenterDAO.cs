@@ -2,6 +2,7 @@
 using Google.Protobuf.WellKnownTypes;
 using Grpc.Net.Client;
 using sep3client.center;
+using Shared.DTOs;
 using Shared.Models;
 
 namespace DataConnection.DAOs;
@@ -38,6 +39,19 @@ public class CenterDAO : ICenterDAO
         });
     }
 
+    public async Task<Task> UpdateAsync(CenterUpdatingDTO dto)
+    {
+        await _centerService.UpdateCenterAsync(new UpdatingCenter()
+        {
+            Id = dto.id,
+            Name = dto.CenterName,
+            ZipCode = dto.ZipCode,
+            City = dto.City,
+            Address = dto.Address
+        });
+        return Task.CompletedTask;
+    }
+
     public async Task<List<Center>> GetAllCentersAsync()
     {
         var centers = await _centerService.GetCentersAsync(new Empty());
@@ -49,14 +63,14 @@ public class CenterDAO : ICenterDAO
     }
     
 
-    public Task<Center?> GetByNameAsync(string name)
-      {
-          return null;
-          // Center? existing = _centerService.FirstOrDefault(c =>
-          //     c.Name.Equals(name, StringComparison.OrdinalIgnoreCase)
-          // );
-          // return Task.FromResult(existing);
-      }
+    public async Task<Center?> GetByIdAsync(int id)
+    {
+        Center? existing = ConvertToCenter(await _centerService.GetByIdAsync(new CenterId()
+        {
+            Id = id
+        }));
+        return existing;
+    }
       
     private Center ConvertToCenter(CenterGrpc center)
     {

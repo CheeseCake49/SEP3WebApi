@@ -41,6 +41,17 @@ public class CenterLogic : ICenterLogic
         await _centerDao.DeleteAsync(id);
     }
 
+    public async Task UpdateAsync(CenterUpdatingDTO dto)
+    {
+        Center? existing = await _centerDao.GetByIdAsync(dto.id);
+        if (existing == null)
+        {
+            throw new Exception($"Center with ID {dto.id} doesn't exist!");
+        }
+
+        await _centerDao.UpdateAsync(dto);
+    }
+
     public async Task<IEnumerable<Center>> GetAllCentersAsync()
     {
         List<Court> courts;
@@ -53,5 +64,16 @@ public class CenterLogic : ICenterLogic
         }
 
         return centers;
+    }
+
+    public async Task<Center?> GetByIdAsync(int id)
+    {
+        Center? existing = await _centerDao.GetByIdAsync(id);
+        if (existing == null)
+        {
+            throw new Exception($"Center with ID {id} doesn't exist!");
+        }
+
+        return existing;
     }
 }

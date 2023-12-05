@@ -67,4 +67,42 @@ public class CenterController : ControllerBase
         }
     }
 
+    [HttpPatch]
+    public async Task<ActionResult> UpdateAsync(CenterUpdatingDTO dto)
+    {
+        try
+        {
+            await _centerLogic.UpdateAsync(dto);
+            return Ok();
+        }
+        catch (RpcException e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(500, e.Status.Detail);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(500, e.Message);
+        }
+    }
+
+    [HttpGet("{id:int}")]
+    public async Task<ActionResult<Center?>> GetByIdAsync([FromRoute] int id)
+    {
+        try
+        {
+            return await _centerLogic.GetByIdAsync(id);
+        } catch (RpcException e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(500, e.Status.Detail);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(500, e.Message);
+        }
+    }
+
 }

@@ -19,9 +19,5 @@
         <Protobuf Include="**\*.proto"
         OutputDir="generated"/>
     </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="generated\" />
-    </ItemGroup>
-
+    
 </Project>
