@@ -68,12 +68,12 @@ public class CenterController : ControllerBase
     }
 
     [HttpPatch]
-    public async Task<ActionResult> UpdateAsync(CenterUpdatingDTO dto)
+    public async Task<ActionResult<Center>> UpdateAsync(CenterUpdatingDTO dto)
     {
         try
         {
-            await _centerLogic.UpdateAsync(dto);
-            return Ok();
+            Center center = await _centerLogic.UpdateAsync(dto);
+            return Ok(center);
         }
         catch (RpcException e)
         {

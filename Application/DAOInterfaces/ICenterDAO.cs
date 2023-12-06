@@ -8,6 +8,6 @@ public interface ICenterDAO
     Task<Center> CreateAsync(Center center);
     Task DeleteAsync(int id);
     Task<List<Center>> GetAllCentersAsync();
-    Task<Task> UpdateAsync(CenterUpdatingDTO dto);
+    Task<Center> UpdateAsync(CenterUpdatingDTO dto);
     Task<Center?> GetByIdAsync(int id);
 }

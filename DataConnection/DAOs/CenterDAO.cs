@@ -39,9 +39,9 @@ public class CenterDAO : ICenterDAO
         });
     }
 
-    public async Task<Task> UpdateAsync(CenterUpdatingDTO dto)
+    public async Task<Center> UpdateAsync(CenterUpdatingDTO dto)
     {
-        await _centerService.UpdateCenterAsync(new UpdatingCenter()
+        CenterGrpc centerGrpc = await _centerService.UpdateCenterAsync(new UpdatingCenter()
         {
             Id = dto.id,
             Name = dto.CenterName,
@@ -49,7 +49,9 @@ public class CenterDAO : ICenterDAO
             City = dto.City,
             Address = dto.Address
         });
-        return Task.CompletedTask;
+
+        Center center = ConvertToCenter(centerGrpc);
+        return center;
     }
 
     public async Task<List<Center>> GetAllCentersAsync()
