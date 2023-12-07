@@ -68,4 +68,24 @@ public class CourtController : ControllerBase
             return StatusCode(500, e.Message);
         }
     }
+    
+    [HttpPatch]
+    public async Task<ActionResult<Court>> UpdateAsync(CourtUpdatingDTO dto)
+    {
+        try
+        {
+            Court court = await _courtLogic.UpdateAsync(dto);
+            return Ok(court);
+        }
+        catch (RpcException e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(500, e.Status.Detail);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(500, e.Message);
+        }
+    }
 }

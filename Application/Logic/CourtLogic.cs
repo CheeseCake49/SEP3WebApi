@@ -26,11 +26,32 @@ public class CourtLogic : ICourtLogic
         await courtDAO.DeleteAsync(centerId, courtNumber);
     }
 
-    
+    public async Task<Court> UpdateAsync(CourtUpdatingDTO dto)
+    {
+        Court? existing = await courtDAO.GetByCenterIdAndCourtNumberAsync(dto.centerId, dto.courtNumber);
+        if (existing == null)
+        {
+            throw new Exception($"Court with center ID {dto.centerId} and court number {dto.courtNumber} doesn't exist!");
+        }
+
+        Court court = await courtDAO.UpdateAsync(dto);
+        return court;
+    }
 
     public async Task<List<Court>> GetCourtsByCenterID(int centerID)
     {
         return await courtDAO.GetCourtsByCenterID(centerID);
+    }
+
+    public async Task<Court?> GetByCenterIdAndCourtNumberAsync(int centerId, int courtNumber)
+    {
+        Court? existing = await courtDAO.GetByCenterIdAndCourtNumberAsync(centerId, courtNumber);
+        if (existing == null)
+        {
+            throw new Exception($"Court with center ID {centerId} and court number {courtNumber} doesn't exist!");
+        }
+
+        return existing;
     }
     
 }

@@ -1,6 +1,7 @@
 using Application.DAOInterfaces;
 using Grpc.Net.Client;
 using sep3client.court;
+using Shared.DTOs;
 using Shared.Models;
 
 namespace DataConnection.DAOs;
@@ -50,6 +51,30 @@ public class CourtDAO : ICourtDAO
             courtList.Add(ConvertToCourt(courts.Court[i]));
         }
         return courtList;
+    }
+
+    public async Task<Court> UpdateAsync(CourtUpdatingDTO dto)
+    {
+        CourtGrpc courtGrpc = await _courtService.UpdateCourtAsync(new CourtGrpc()
+        {
+            Id = dto.centerId,
+            CourtType = dto.courtType,
+            CourtNumber = dto.courtNumber,
+            CourtSponsor = dto.courtSponsor
+        });
+        
+        Court court = ConvertToCourt(courtGrpc);
+        return court;
+    }
+
+    public async Task<Court?> GetByCenterIdAndCourtNumberAsync(int centerId, int courtNumber)
+    {
+        Court? existing = ConvertToCourt(await _courtService.GetByCenterIdAndCourtNumberAsync(new CourtDeletion()
+        {
+            CenterId = centerId,
+            CourtNumber = courtNumber
+        }));
+        return existing;
     }
 
     private Court ConvertToCourt(CourtGrpc court)
