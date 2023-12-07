@@ -7,13 +7,15 @@ public class Court
     public string CourtType { get; set; }
     public int CourtNumber { get; set; }
     public string CourtSponsor { get; set; }
+    public List<TimeSlot> TimeSlots { get; set; }
 
     public Court(int centerId, string courtType, int courtNumber, string courtSponsor)
     {
         CenterId = centerId;
         CourtType = courtType;
         CourtNumber = courtNumber;
-        CourtSponsor = courtSponsor;
+        CourtSponsor = courtSponsor; 
+        TimeSlots = new List<TimeSlot>();
     }
 
     public Court()
