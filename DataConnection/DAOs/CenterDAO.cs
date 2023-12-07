@@ -47,16 +47,16 @@ public class CenterDAO : ICenterDAO
         }
         return centerList;
     }
-    
 
-    public Task<Center?> GetByNameAsync(string name)
-      {
-          return null;
-          // Center? existing = _centerService.FirstOrDefault(c =>
-          //     c.Name.Equals(name, StringComparison.OrdinalIgnoreCase)
-          // );
-          // return Task.FromResult(existing);
-      }
+    public async Task<string> AddCenterAdminAsync(int centerId, string username)
+    {
+        UserUsername createdUsername = await _centerService.AddCenterAdminAsync(new CenterAdmin
+        {
+            CenterId = centerId,
+            Username = username
+        });
+        return createdUsername.Username;
+    }
       
     private Center ConvertToCenter(CenterGrpc center)
     {

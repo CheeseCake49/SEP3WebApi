@@ -54,4 +54,9 @@ public class CenterLogic : ICenterLogic
 
         return centers;
     }
+
+    public async Task<string> AddCenterAdminAsync(int centerId, string username)
+    {
+        return await _centerDao.AddCenterAdminAsync(centerId, username);
+    }
 }

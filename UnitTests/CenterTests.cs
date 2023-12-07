@@ -1,5 +1,6 @@
 using Application.DAOInterfaces;
 using Application.Logic;
+using Application.LogicInterfaces;
 using DataConnection.DAOs;
 using Shared.DTOs;
 
@@ -21,5 +22,14 @@ public class CenterTests
         
         
     }
-    
+
+    [TestMethod]
+    public void AddCenterAdmin()
+    {
+        ICenterDAO centerDao = new CenterDAO();
+
+        string result = centerDao.AddCenterAdminAsync(1, "Emil").Result;
+        Console.WriteLine(result);
+    }
+
 }

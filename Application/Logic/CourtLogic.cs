@@ -16,7 +16,7 @@ public class CourtLogic : ICourtLogic
 
     public async Task<Court> CreateAsync(int CenterId, CourtCreationDTO courtToCreate)
     {
-        Court toCreate = new Court(CenterId, courtToCreate.CourtType, courtToCreate.CourtNumber, courtToCreate.CourtSponsor);
+        Court toCreate = new Court(CenterId, courtToCreate.CourtType, courtToCreate.CourtNumber, courtToCreate.CourtSponsor ?? "");
 
         return await courtDAO.CreateAsync(toCreate);
     }
