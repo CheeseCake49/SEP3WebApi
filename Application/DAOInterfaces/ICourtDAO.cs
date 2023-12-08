@@ -10,4 +10,5 @@ public interface ICourtDAO
     Task<List<Court>> GetCourtsByCenterID(int centerID);
     Task<Court> UpdateAsync(CourtUpdatingDTO dto);
     Task<Court?> GetByCenterIdAndCourtNumberAsync(int centerId, int courtNumber);
+    Task<Court?> GetByIdAsync(int id);
 }

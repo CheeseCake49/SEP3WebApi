@@ -30,30 +30,36 @@ namespace sep3client.court {
             "IAEoCRITCgtjb3VydE51bWJlchgDIAEoBRIUCgxjb3VydFNwb25zb3IYBCAB",
             "KAkiZwoJQ291cnRHcnBjEgoKAmlkGAEgASgFEhAKCGNlbnRlcklkGAIgASgF",
             "EhEKCWNvdXJ0VHlwZRgDIAEoCRITCgtjb3VydE51bWJlchgEIAEoBRIUCgxj",
-            "b3VydFNwb25zb3IYBSABKAkiQgoJQ291cnRMaXN0EjUKBWNvdXJ0GAEgAygL",
-            "MiYuc2VwM2RhdGFsYXllci5ncnBjLnByb3RvYnVmLkNvdXJ0R3JwYyIWCghD",
-            "ZW50ZXJJZBIKCgJpZBgBIAEoBSI2Cg1Db3VydERlbGV0aW9uEhAKCGNlbnRl",
-            "cklkGAEgASgFEhMKC2NvdXJ0TnVtYmVyGAIgASgFMooECgxDb3VydFNlcnZp",
-            "Y2USYQoLQ3JlYXRlQ291cnQSKi5zZXAzZGF0YWxheWVyLmdycGMucHJvdG9i",
-            "dWYuQ3JlYXRpbmdDb3VydBomLnNlcDNkYXRhbGF5ZXIuZ3JwYy5wcm90b2J1",
-            "Zi5Db3VydEdycGMSZgoVR2V0Q291cnRzRnJvbUNlbnRlcklkEiUuc2VwM2Rh",
-            "dGFsYXllci5ncnBjLnByb3RvYnVmLkNlbnRlcklkGiYuc2VwM2RhdGFsYXll",
-            "ci5ncnBjLnByb3RvYnVmLkNvdXJ0TGlzdBJdChdEZWxldGVDb3VydEZyb21D",
-            "ZW50ZXJJZBIqLnNlcDNkYXRhbGF5ZXIuZ3JwYy5wcm90b2J1Zi5Db3VydERl",
-            "bGV0aW9uGhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5El0KC1VwZGF0ZUNvdXJ0",
-            "EiYuc2VwM2RhdGFsYXllci5ncnBjLnByb3RvYnVmLkNvdXJ0R3JwYxomLnNl",
-            "cDNkYXRhbGF5ZXIuZ3JwYy5wcm90b2J1Zi5Db3VydEdycGMScQobR2V0QnlD",
-            "ZW50ZXJJZEFuZENvdXJ0TnVtYmVyEiouc2VwM2RhdGFsYXllci5ncnBjLnBy",
-            "b3RvYnVmLkNvdXJ0RGVsZXRpb24aJi5zZXAzZGF0YWxheWVyLmdycGMucHJv",
-            "dG9idWYuQ291cnRHcnBjQhVQAaoCEHNlcDNjbGllbnQuY291cnRiBnByb3Rv",
-            "Mw=="));
+            "b3VydFNwb25zb3IYBSABKAkiWQoNVXBkYXRpbmdDb3VydBIKCgJpZBgBIAEo",
+            "BRIRCgljb3VydFR5cGUYAiABKAkSEwoLY291cnROdW1iZXIYAyABKAUSFAoM",
+            "Y291cnRTcG9uc29yGAUgASgJIkIKCUNvdXJ0TGlzdBI1CgVjb3VydBgBIAMo",
+            "CzImLnNlcDNkYXRhbGF5ZXIuZ3JwYy5wcm90b2J1Zi5Db3VydEdycGMiFgoI",
+            "Q2VudGVySWQSCgoCaWQYASABKAUiFQoHQ291cnRJZBIKCgJpZBgBIAEoBSI2",
+            "Cg1Db3VydERlbGV0aW9uEhAKCGNlbnRlcklkGAEgASgFEhMKC2NvdXJ0TnVt",
+            "YmVyGAIgASgFMucECgxDb3VydFNlcnZpY2USYQoLQ3JlYXRlQ291cnQSKi5z",
+            "ZXAzZGF0YWxheWVyLmdycGMucHJvdG9idWYuQ3JlYXRpbmdDb3VydBomLnNl",
+            "cDNkYXRhbGF5ZXIuZ3JwYy5wcm90b2J1Zi5Db3VydEdycGMSZgoVR2V0Q291",
+            "cnRzRnJvbUNlbnRlcklkEiUuc2VwM2RhdGFsYXllci5ncnBjLnByb3RvYnVm",
+            "LkNlbnRlcklkGiYuc2VwM2RhdGFsYXllci5ncnBjLnByb3RvYnVmLkNvdXJ0",
+            "TGlzdBJdChdEZWxldGVDb3VydEZyb21DZW50ZXJJZBIqLnNlcDNkYXRhbGF5",
+            "ZXIuZ3JwYy5wcm90b2J1Zi5Db3VydERlbGV0aW9uGhYuZ29vZ2xlLnByb3Rv",
+            "YnVmLkVtcHR5EmEKC1VwZGF0ZUNvdXJ0Eiouc2VwM2RhdGFsYXllci5ncnBj",
+            "LnByb3RvYnVmLlVwZGF0aW5nQ291cnQaJi5zZXAzZGF0YWxheWVyLmdycGMu",
+            "cHJvdG9idWYuQ291cnRHcnBjEnEKG0dldEJ5Q2VudGVySWRBbmRDb3VydE51",
+            "bWJlchIqLnNlcDNkYXRhbGF5ZXIuZ3JwYy5wcm90b2J1Zi5Db3VydERlbGV0",
+            "aW9uGiYuc2VwM2RhdGFsYXllci5ncnBjLnByb3RvYnVmLkNvdXJ0R3JwYxJX",
+            "CgdHZXRCeUlkEiQuc2VwM2RhdGFsYXllci5ncnBjLnByb3RvYnVmLkNvdXJ0",
+            "SWQaJi5zZXAzZGF0YWxheWVyLmdycGMucHJvdG9idWYuQ291cnRHcnBjQhVQ",
+            "AaoCEHNlcDNjbGllbnQuY291cnRiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::sep3client.court.CreatingCourt), global::sep3client.court.CreatingCourt.Parser, new[]{ "CenterId", "CourtType", "CourtNumber", "CourtSponsor" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::sep3client.court.CourtGrpc), global::sep3client.court.CourtGrpc.Parser, new[]{ "Id", "CenterId", "CourtType", "CourtNumber", "CourtSponsor" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::sep3client.court.UpdatingCourt), global::sep3client.court.UpdatingCourt.Parser, new[]{ "Id", "CourtType", "CourtNumber", "CourtSponsor" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::sep3client.court.CourtList), global::sep3client.court.CourtList.Parser, new[]{ "Court" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::sep3client.court.CenterId), global::sep3client.court.CenterId.Parser, new[]{ "Id" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::sep3client.court.CourtId), global::sep3client.court.CourtId.Parser, new[]{ "Id" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::sep3client.court.CourtDeletion), global::sep3client.court.CourtDeletion.Parser, new[]{ "CenterId", "CourtNumber" }, null, null, null, null)
           }));
     }
@@ -698,6 +704,306 @@ namespace sep3client.court {
 
   }
 
+  public sealed partial class UpdatingCourt : pb::IMessage<UpdatingCourt>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<UpdatingCourt> _parser = new pb::MessageParser<UpdatingCourt>(() => new UpdatingCourt());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<UpdatingCourt> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::sep3client.court.CourtServiceReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public UpdatingCourt() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public UpdatingCourt(UpdatingCourt other) : this() {
+      id_ = other.id_;
+      courtType_ = other.courtType_;
+      courtNumber_ = other.courtNumber_;
+      courtSponsor_ = other.courtSponsor_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public UpdatingCourt Clone() {
+      return new UpdatingCourt(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "courtType" field.</summary>
+    public const int CourtTypeFieldNumber = 2;
+    private string courtType_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string CourtType {
+      get { return courtType_; }
+      set {
+        courtType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "courtNumber" field.</summary>
+    public const int CourtNumberFieldNumber = 3;
+    private int courtNumber_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CourtNumber {
+      get { return courtNumber_; }
+      set {
+        courtNumber_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "courtSponsor" field.</summary>
+    public const int CourtSponsorFieldNumber = 5;
+    private string courtSponsor_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string CourtSponsor {
+      get { return courtSponsor_; }
+      set {
+        courtSponsor_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as UpdatingCourt);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(UpdatingCourt other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (CourtType != other.CourtType) return false;
+      if (CourtNumber != other.CourtNumber) return false;
+      if (CourtSponsor != other.CourtSponsor) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (CourtType.Length != 0) hash ^= CourtType.GetHashCode();
+      if (CourtNumber != 0) hash ^= CourtNumber.GetHashCode();
+      if (CourtSponsor.Length != 0) hash ^= CourtSponsor.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (CourtType.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(CourtType);
+      }
+      if (CourtNumber != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(CourtNumber);
+      }
+      if (CourtSponsor.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(CourtSponsor);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (CourtType.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(CourtType);
+      }
+      if (CourtNumber != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(CourtNumber);
+      }
+      if (CourtSponsor.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(CourtSponsor);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (CourtType.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(CourtType);
+      }
+      if (CourtNumber != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(CourtNumber);
+      }
+      if (CourtSponsor.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(CourtSponsor);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(UpdatingCourt other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.CourtType.Length != 0) {
+        CourtType = other.CourtType;
+      }
+      if (other.CourtNumber != 0) {
+        CourtNumber = other.CourtNumber;
+      }
+      if (other.CourtSponsor.Length != 0) {
+        CourtSponsor = other.CourtSponsor;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            CourtType = input.ReadString();
+            break;
+          }
+          case 24: {
+            CourtNumber = input.ReadInt32();
+            break;
+          }
+          case 42: {
+            CourtSponsor = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            CourtType = input.ReadString();
+            break;
+          }
+          case 24: {
+            CourtNumber = input.ReadInt32();
+            break;
+          }
+          case 42: {
+            CourtSponsor = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   public sealed partial class CourtList : pb::IMessage<CourtList>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -712,7 +1018,7 @@ namespace sep3client.court {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::sep3client.court.CourtServiceReflection.Descriptor.MessageTypes[2]; }
+      get { return global::sep3client.court.CourtServiceReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -890,7 +1196,7 @@ namespace sep3client.court {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::sep3client.court.CourtServiceReflection.Descriptor.MessageTypes[3]; }
+      get { return global::sep3client.court.CourtServiceReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1065,6 +1371,195 @@ namespace sep3client.court {
 
   }
 
+  public sealed partial class CourtId : pb::IMessage<CourtId>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<CourtId> _parser = new pb::MessageParser<CourtId>(() => new CourtId());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<CourtId> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::sep3client.court.CourtServiceReflection.Descriptor.MessageTypes[5]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CourtId() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CourtId(CourtId other) : this() {
+      id_ = other.id_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CourtId Clone() {
+      return new CourtId(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as CourtId);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(CourtId other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(CourtId other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   public sealed partial class CourtDeletion : pb::IMessage<CourtDeletion>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1079,7 +1574,7 @@ namespace sep3client.court {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::sep3client.court.CourtServiceReflection.Descriptor.MessageTypes[4]; }
+      get { return global::sep3client.court.CourtServiceReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

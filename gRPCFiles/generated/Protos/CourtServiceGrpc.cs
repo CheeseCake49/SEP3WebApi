@@ -57,6 +57,10 @@ namespace sep3client.court {
     static readonly grpc::Marshaller<global::sep3client.court.CourtDeletion> __Marshaller_sep3datalayer_grpc_protobuf_CourtDeletion = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::sep3client.court.CourtDeletion.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::Google.Protobuf.WellKnownTypes.Empty> __Marshaller_google_protobuf_Empty = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Protobuf.WellKnownTypes.Empty.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::sep3client.court.UpdatingCourt> __Marshaller_sep3datalayer_grpc_protobuf_UpdatingCourt = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::sep3client.court.UpdatingCourt.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::sep3client.court.CourtId> __Marshaller_sep3datalayer_grpc_protobuf_CourtId = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::sep3client.court.CourtId.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::sep3client.court.CreatingCourt, global::sep3client.court.CourtGrpc> __Method_CreateCourt = new grpc::Method<global::sep3client.court.CreatingCourt, global::sep3client.court.CourtGrpc>(
@@ -83,11 +87,11 @@ namespace sep3client.court {
         __Marshaller_google_protobuf_Empty);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::sep3client.court.CourtGrpc, global::sep3client.court.CourtGrpc> __Method_UpdateCourt = new grpc::Method<global::sep3client.court.CourtGrpc, global::sep3client.court.CourtGrpc>(
+    static readonly grpc::Method<global::sep3client.court.UpdatingCourt, global::sep3client.court.CourtGrpc> __Method_UpdateCourt = new grpc::Method<global::sep3client.court.UpdatingCourt, global::sep3client.court.CourtGrpc>(
         grpc::MethodType.Unary,
         __ServiceName,
         "UpdateCourt",
-        __Marshaller_sep3datalayer_grpc_protobuf_CourtGrpc,
+        __Marshaller_sep3datalayer_grpc_protobuf_UpdatingCourt,
         __Marshaller_sep3datalayer_grpc_protobuf_CourtGrpc);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
@@ -96,6 +100,14 @@ namespace sep3client.court {
         __ServiceName,
         "GetByCenterIdAndCourtNumber",
         __Marshaller_sep3datalayer_grpc_protobuf_CourtDeletion,
+        __Marshaller_sep3datalayer_grpc_protobuf_CourtGrpc);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::sep3client.court.CourtId, global::sep3client.court.CourtGrpc> __Method_GetById = new grpc::Method<global::sep3client.court.CourtId, global::sep3client.court.CourtGrpc>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetById",
+        __Marshaller_sep3datalayer_grpc_protobuf_CourtId,
         __Marshaller_sep3datalayer_grpc_protobuf_CourtGrpc);
 
     /// <summary>Service descriptor</summary>
@@ -127,13 +139,19 @@ namespace sep3client.court {
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::sep3client.court.CourtGrpc> UpdateCourt(global::sep3client.court.CourtGrpc request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::sep3client.court.CourtGrpc> UpdateCourt(global::sep3client.court.UpdatingCourt request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::sep3client.court.CourtGrpc> GetByCenterIdAndCourtNumber(global::sep3client.court.CourtDeletion request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::sep3client.court.CourtGrpc> GetById(global::sep3client.court.CourtId request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -228,22 +246,22 @@ namespace sep3client.court {
         return CallInvoker.AsyncUnaryCall(__Method_DeleteCourtFromCenterId, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::sep3client.court.CourtGrpc UpdateCourt(global::sep3client.court.CourtGrpc request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::sep3client.court.CourtGrpc UpdateCourt(global::sep3client.court.UpdatingCourt request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return UpdateCourt(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::sep3client.court.CourtGrpc UpdateCourt(global::sep3client.court.CourtGrpc request, grpc::CallOptions options)
+      public virtual global::sep3client.court.CourtGrpc UpdateCourt(global::sep3client.court.UpdatingCourt request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_UpdateCourt, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::sep3client.court.CourtGrpc> UpdateCourtAsync(global::sep3client.court.CourtGrpc request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::sep3client.court.CourtGrpc> UpdateCourtAsync(global::sep3client.court.UpdatingCourt request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return UpdateCourtAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::sep3client.court.CourtGrpc> UpdateCourtAsync(global::sep3client.court.CourtGrpc request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::sep3client.court.CourtGrpc> UpdateCourtAsync(global::sep3client.court.UpdatingCourt request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_UpdateCourt, null, options, request);
       }
@@ -267,6 +285,26 @@ namespace sep3client.court {
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetByCenterIdAndCourtNumber, null, options, request);
       }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::sep3client.court.CourtGrpc GetById(global::sep3client.court.CourtId request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetById(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::sep3client.court.CourtGrpc GetById(global::sep3client.court.CourtId request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetById, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::sep3client.court.CourtGrpc> GetByIdAsync(global::sep3client.court.CourtId request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetByIdAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::sep3client.court.CourtGrpc> GetByIdAsync(global::sep3client.court.CourtId request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetById, null, options, request);
+      }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       protected override CourtServiceClient NewInstance(ClientBaseConfiguration configuration)
@@ -285,7 +323,8 @@ namespace sep3client.court {
           .AddMethod(__Method_GetCourtsFromCenterId, serviceImpl.GetCourtsFromCenterId)
           .AddMethod(__Method_DeleteCourtFromCenterId, serviceImpl.DeleteCourtFromCenterId)
           .AddMethod(__Method_UpdateCourt, serviceImpl.UpdateCourt)
-          .AddMethod(__Method_GetByCenterIdAndCourtNumber, serviceImpl.GetByCenterIdAndCourtNumber).Build();
+          .AddMethod(__Method_GetByCenterIdAndCourtNumber, serviceImpl.GetByCenterIdAndCourtNumber)
+          .AddMethod(__Method_GetById, serviceImpl.GetById).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -298,8 +337,9 @@ namespace sep3client.court {
       serviceBinder.AddMethod(__Method_CreateCourt, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::sep3client.court.CreatingCourt, global::sep3client.court.CourtGrpc>(serviceImpl.CreateCourt));
       serviceBinder.AddMethod(__Method_GetCourtsFromCenterId, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::sep3client.court.CenterId, global::sep3client.court.CourtList>(serviceImpl.GetCourtsFromCenterId));
       serviceBinder.AddMethod(__Method_DeleteCourtFromCenterId, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::sep3client.court.CourtDeletion, global::Google.Protobuf.WellKnownTypes.Empty>(serviceImpl.DeleteCourtFromCenterId));
-      serviceBinder.AddMethod(__Method_UpdateCourt, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::sep3client.court.CourtGrpc, global::sep3client.court.CourtGrpc>(serviceImpl.UpdateCourt));
+      serviceBinder.AddMethod(__Method_UpdateCourt, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::sep3client.court.UpdatingCourt, global::sep3client.court.CourtGrpc>(serviceImpl.UpdateCourt));
       serviceBinder.AddMethod(__Method_GetByCenterIdAndCourtNumber, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::sep3client.court.CourtDeletion, global::sep3client.court.CourtGrpc>(serviceImpl.GetByCenterIdAndCourtNumber));
+      serviceBinder.AddMethod(__Method_GetById, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::sep3client.court.CourtId, global::sep3client.court.CourtGrpc>(serviceImpl.GetById));
     }
 
   }

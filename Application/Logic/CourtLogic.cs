@@ -29,11 +29,11 @@ public class CourtLogic : ICourtLogic
     public async Task<Court> UpdateAsync(CourtUpdatingDTO dto)
     {
         Court? existing = await courtDAO.GetByCenterIdAndCourtNumberAsync(dto.centerId, dto.courtNumber);
-        if (existing == null)
+        if (existing != null && existing.Id != dto.id)
         {
-            throw new Exception($"Court with center ID {dto.centerId} and court number {dto.courtNumber} doesn't exist!");
+            throw new Exception($"Court with number {dto.courtNumber} already exist! {dto.id} {existing.Id}");
         }
-
+        
         Court court = await courtDAO.UpdateAsync(dto);
         return court;
     }
@@ -49,6 +49,17 @@ public class CourtLogic : ICourtLogic
         if (existing == null)
         {
             throw new Exception($"Court with center ID {centerId} and court number {courtNumber} doesn't exist!");
+        }
+
+        return existing;
+    }
+    
+    public async Task<Court?> GetByIdAsync(int id)
+    {
+        Court? existing = await courtDAO.GetByIdAsync(id);
+        if (existing == null)
+        {
+            throw new Exception($"Court with ID {id} doesn't exist!");
         }
 
         return existing;
