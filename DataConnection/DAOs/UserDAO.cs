@@ -1,7 +1,7 @@
 using Application.DAOInterfaces;
 using Google.Protobuf.WellKnownTypes;
 using Grpc.Net.Client;
-using sep3client.user;
+using sep3client.proto;
 using Shared.Models;
 
 namespace DataConnection.DAOs;
@@ -41,7 +41,22 @@ public class UserDAO : IUserDAO
         }
         return userList;
     }
-    
+
+    public async Task<List<User>> GetCenterAdminsAsync(int centerId)
+    {
+        var users = await _userService.GetCenterAdminsAsync(new CenterId
+        {
+            Id = centerId
+        });
+        List<User> admins = new();
+        for (int i = 0; i < users.User.Count; i++)
+        {
+            admins.Add(ConvertToUser(users.User[i]));
+        }
+
+        return admins;
+    }
+
     private User ConvertToUser(UserGrpc user)
     {
         return new User()

@@ -1,7 +1,7 @@
 ﻿using Application.DAOInterfaces;
 using Google.Protobuf.WellKnownTypes;
 using Grpc.Net.Client;
-using sep3client.center;
+using sep3client.proto;
 using Shared.Models;
 
 namespace DataConnection.DAOs;

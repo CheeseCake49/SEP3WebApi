@@ -21,12 +21,15 @@ public class UserLogic : IUserLogic
         return await _userDao.CreateAsync(toCreate);
     }
     
-    public async Task<IEnumerable<User>> getAllUsers()
+    public async Task<List<User>> GetAllUsers()
     {
         List<User> users = await _userDao.GetAllUsersAsync();
 
         return users;
     }
-    
-    
+
+    public async Task<List<User>> GetCenterAdminsAsync(int centerId)
+    {
+        return await _userDao.GetCenterAdminsAsync(centerId);
+    }
 }

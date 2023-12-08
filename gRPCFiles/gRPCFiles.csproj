@@ -22,6 +22,7 @@
 
     <ItemGroup>
       <Folder Include="generated\" />
+      <Folder Include="generated\proto\" />
     </ItemGroup>
 
 </Project>

@@ -28,7 +28,9 @@ public class CenterTests
     {
         ICenterDAO centerDao = new CenterDAO();
 
-        string result = centerDao.AddCenterAdminAsync(1, "Emil").Result;
+        string result = centerDao.AddCenterAdminAsync(1, "Luu").Result;
+        Console.WriteLine(result);
+        result = centerDao.AddCenterAdminAsync(10, "Johan").Result;
         Console.WriteLine(result);
     }
 

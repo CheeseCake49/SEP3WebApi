@@ -67,11 +67,11 @@ public class CenterController : ControllerBase
     }
 
     [HttpPost("/center/{id:int}/admins")]
-    public async Task<ActionResult<string>> AddCenterAdminAsync([FromRoute] int id, [FromBody] string username)
+    public async Task<ActionResult<string>> AddCenterAdminAsync([FromRoute] int id, [FromBody] CenterAdminDTO dto)
     {
         try
         {
-            string created = await _centerLogic.AddCenterAdminAsync(id, username);
+            CenterAdminDTO created = new(id, await _centerLogic.AddCenterAdminAsync(id, dto.username));
             return Ok(created);
         }
         catch (Exception e)

@@ -1,6 +1,6 @@
 using Application.DAOInterfaces;
 using Grpc.Net.Client;
-using sep3client.court;
+using sep3client.proto;
 using Shared.Models;
 
 namespace DataConnection.DAOs;
