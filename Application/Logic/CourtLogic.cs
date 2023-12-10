@@ -26,7 +26,7 @@ public class CourtLogic : ICourtLogic
         {
             for (int i = 0; i < 36; i++)
             {
-                timeSlots.Add(new TimeSlot(created.Id, startTime, 30));
+                timeSlots.Add(new TimeSlot(created.Id, startTime, 30, false));
                 startTime = startTime.AddMinutes(30);
             }
 

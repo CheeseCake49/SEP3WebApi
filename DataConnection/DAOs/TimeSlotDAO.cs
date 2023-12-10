@@ -26,10 +26,17 @@ public class TimeSlotDAO : ITimeSlotDAO
             Day = timeSlot.startTime.Day,
             StartHour = timeSlot.startTime.Hour,
             StartMinute = timeSlot.startTime.Minute,
+            Duration = timeSlot.duration,
+            IsBooked = timeSlot.isBooked
         });
         return ConvertToTimeSlot(createdTimeSlot);
     }
-    
+
+    public async Task<TimeSlot> GetByCourtAsync(int courtId)
+    {
+        throw new NotImplementedException();
+    }
+
     private TimeSlot ConvertToTimeSlot(TimeSlotGrpc timeSlot)
     {
         return new TimeSlot()
@@ -37,7 +44,8 @@ public class TimeSlotDAO : ITimeSlotDAO
             Id = timeSlot.Id,
             courtId = timeSlot.CourtId,
             startTime = convertToDateTime(timeSlot.Year, timeSlot.Month, timeSlot.Day, timeSlot.StartHour, timeSlot.StartMinute),
-            duration = timeSlot.Duration
+            duration = timeSlot.Duration,
+            isBooked = timeSlot.IsBooked
         };
     }
     

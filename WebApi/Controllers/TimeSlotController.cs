@@ -30,4 +30,19 @@ public class TimeSlotController : ControllerBase
             return StatusCode(500, e.Message);
         }
     }
+    
+    [HttpGet("/timeslot/{courtId:int}")]
+    public async Task<ActionResult<TimeSlot>> GetTimeSlotByCourtIdAsync([FromBody] int courtId)
+    {
+        try
+        {
+            TimeSlot timeSlot = await _timeSlotLogic.GetTimeSlotByCourtAsync(courtId);
+            return Ok(timeSlot);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(500, e.Message);
+        }
+    }
 }

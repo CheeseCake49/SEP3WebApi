@@ -5,4 +5,5 @@ namespace Application.DAOInterfaces;
 public interface ITimeSlotDAO
 {
     Task<TimeSlot> CreateAsync(TimeSlot timeSlot);
+    Task<TimeSlot> GetByCourtAsync(int courtId);
 }

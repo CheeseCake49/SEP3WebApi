@@ -25,25 +25,30 @@ namespace sep3client.timeslot {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Chtwcm90by9USW1lU2xvdFNlcnZpY2UucHJvdG8SG3NlcDNkYXRhbGF5ZXIu",
-            "Z3JwYy5wcm90b2J1ZhobZ29vZ2xlL3Byb3RvYnVmL2VtcHR5LnByb3RvIocB",
+            "Z3JwYy5wcm90b2J1ZhobZ29vZ2xlL3Byb3RvYnVmL2VtcHR5LnByb3RvIpkB",
             "ChBDcmVhdGluZ1RpbWVTbG90Eg8KB2NvdXJ0SWQYASABKAUSDAoEeWVhchgC",
             "IAEoBRINCgVtb250aBgDIAEoBRILCgNkYXkYBCABKAUSEQoJc3RhcnRIb3Vy",
             "GAUgASgFEhMKC3N0YXJ0TWludXRlGAYgASgFEhAKCGR1cmF0aW9uGAcgASgF",
-            "Io8BCgxUaW1lU2xvdEdycGMSCgoCaWQYASABKAUSDwoHY291cnRJZBgCIAEo",
-            "BRIMCgR5ZWFyGAMgASgFEg0KBW1vbnRoGAQgASgFEgsKA2RheRgFIAEoBRIR",
-            "CglzdGFydEhvdXIYBiABKAUSEwoLc3RhcnRNaW51dGUYByABKAUSEAoIZHVy",
-            "YXRpb24YCCABKAUiTQoNVGltZVNsb3RzR3JwYxI8Cgl0aW1lU2xvdHMYASAD",
-            "KAsyKS5zZXAzZGF0YWxheWVyLmdycGMucHJvdG9idWYuVGltZVNsb3RHcnBj",
-            "Mn0KD1RpbWVTbG90U2VydmljZRJqCg5DcmVhdGVUaW1lU2xvdBItLnNlcDNk",
-            "YXRhbGF5ZXIuZ3JwYy5wcm90b2J1Zi5DcmVhdGluZ1RpbWVTbG90Gikuc2Vw",
-            "M2RhdGFsYXllci5ncnBjLnByb3RvYnVmLlRpbWVTbG90R3JwY0IYUAGqAhNz",
-            "ZXAzY2xpZW50LnRpbWVzbG90YgZwcm90bzM="));
+            "EhAKCGlzQm9va2VkGAggASgIIqEBCgxUaW1lU2xvdEdycGMSCgoCaWQYASAB",
+            "KAUSDwoHY291cnRJZBgCIAEoBRIMCgR5ZWFyGAMgASgFEg0KBW1vbnRoGAQg",
+            "ASgFEgsKA2RheRgFIAEoBRIRCglzdGFydEhvdXIYBiABKAUSEwoLc3RhcnRN",
+            "aW51dGUYByABKAUSEAoIZHVyYXRpb24YCCABKAUSEAoIaXNCb29rZWQYCSAB",
+            "KAgiTAoMVGltZVNsb3RMaXN0EjwKCXRpbWVTbG90cxgBIAMoCzIpLnNlcDNk",
+            "YXRhbGF5ZXIuZ3JwYy5wcm90b2J1Zi5UaW1lU2xvdEdycGMiGgoHY291cnRJ",
+            "ZBIPCgdjb3VydElkGAEgASgFMukBCg9UaW1lU2xvdFNlcnZpY2USagoOQ3Jl",
+            "YXRlVGltZVNsb3QSLS5zZXAzZGF0YWxheWVyLmdycGMucHJvdG9idWYuQ3Jl",
+            "YXRpbmdUaW1lU2xvdBopLnNlcDNkYXRhbGF5ZXIuZ3JwYy5wcm90b2J1Zi5U",
+            "aW1lU2xvdEdycGMSagoXR2V0VGltZVNsb3RzRnJvbUNvdXJ0SWQSJC5zZXAz",
+            "ZGF0YWxheWVyLmdycGMucHJvdG9idWYuY291cnRJZBopLnNlcDNkYXRhbGF5",
+            "ZXIuZ3JwYy5wcm90b2J1Zi5UaW1lU2xvdExpc3RCGFABqgITc2VwM2NsaWVu",
+            "dC50aW1lc2xvdGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::sep3client.timeslot.CreatingTimeSlot), global::sep3client.timeslot.CreatingTimeSlot.Parser, new[]{ "CourtId", "Year", "Month", "Day", "StartHour", "StartMinute", "Duration" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::sep3client.timeslot.TimeSlotGrpc), global::sep3client.timeslot.TimeSlotGrpc.Parser, new[]{ "Id", "CourtId", "Year", "Month", "Day", "StartHour", "StartMinute", "Duration" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::sep3client.timeslot.TimeSlotsGrpc), global::sep3client.timeslot.TimeSlotsGrpc.Parser, new[]{ "TimeSlots" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::sep3client.timeslot.CreatingTimeSlot), global::sep3client.timeslot.CreatingTimeSlot.Parser, new[]{ "CourtId", "Year", "Month", "Day", "StartHour", "StartMinute", "Duration", "IsBooked" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::sep3client.timeslot.TimeSlotGrpc), global::sep3client.timeslot.TimeSlotGrpc.Parser, new[]{ "Id", "CourtId", "Year", "Month", "Day", "StartHour", "StartMinute", "Duration", "IsBooked" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::sep3client.timeslot.TimeSlotList), global::sep3client.timeslot.TimeSlotList.Parser, new[]{ "TimeSlots" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::sep3client.timeslot.courtId), global::sep3client.timeslot.courtId.Parser, new[]{ "CourtId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -91,6 +96,7 @@ namespace sep3client.timeslot {
       startHour_ = other.startHour_;
       startMinute_ = other.startMinute_;
       duration_ = other.duration_;
+      isBooked_ = other.isBooked_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -184,6 +190,18 @@ namespace sep3client.timeslot {
       }
     }
 
+    /// <summary>Field number for the "isBooked" field.</summary>
+    public const int IsBookedFieldNumber = 8;
+    private bool isBooked_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsBooked {
+      get { return isBooked_; }
+      set {
+        isBooked_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -206,6 +224,7 @@ namespace sep3client.timeslot {
       if (StartHour != other.StartHour) return false;
       if (StartMinute != other.StartMinute) return false;
       if (Duration != other.Duration) return false;
+      if (IsBooked != other.IsBooked) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -220,6 +239,7 @@ namespace sep3client.timeslot {
       if (StartHour != 0) hash ^= StartHour.GetHashCode();
       if (StartMinute != 0) hash ^= StartMinute.GetHashCode();
       if (Duration != 0) hash ^= Duration.GetHashCode();
+      if (IsBooked != false) hash ^= IsBooked.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -266,6 +286,10 @@ namespace sep3client.timeslot {
         output.WriteRawTag(56);
         output.WriteInt32(Duration);
       }
+      if (IsBooked != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(IsBooked);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -304,6 +328,10 @@ namespace sep3client.timeslot {
         output.WriteRawTag(56);
         output.WriteInt32(Duration);
       }
+      if (IsBooked != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(IsBooked);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -334,6 +362,9 @@ namespace sep3client.timeslot {
       }
       if (Duration != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Duration);
+      }
+      if (IsBooked != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -367,6 +398,9 @@ namespace sep3client.timeslot {
       }
       if (other.Duration != 0) {
         Duration = other.Duration;
+      }
+      if (other.IsBooked != false) {
+        IsBooked = other.IsBooked;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -411,6 +445,10 @@ namespace sep3client.timeslot {
             Duration = input.ReadInt32();
             break;
           }
+          case 64: {
+            IsBooked = input.ReadBool();
+            break;
+          }
         }
       }
     #endif
@@ -452,6 +490,10 @@ namespace sep3client.timeslot {
           }
           case 56: {
             Duration = input.ReadInt32();
+            break;
+          }
+          case 64: {
+            IsBooked = input.ReadBool();
             break;
           }
         }
@@ -503,6 +545,7 @@ namespace sep3client.timeslot {
       startHour_ = other.startHour_;
       startMinute_ = other.startMinute_;
       duration_ = other.duration_;
+      isBooked_ = other.isBooked_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -608,6 +651,18 @@ namespace sep3client.timeslot {
       }
     }
 
+    /// <summary>Field number for the "isBooked" field.</summary>
+    public const int IsBookedFieldNumber = 9;
+    private bool isBooked_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsBooked {
+      get { return isBooked_; }
+      set {
+        isBooked_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -631,6 +686,7 @@ namespace sep3client.timeslot {
       if (StartHour != other.StartHour) return false;
       if (StartMinute != other.StartMinute) return false;
       if (Duration != other.Duration) return false;
+      if (IsBooked != other.IsBooked) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -646,6 +702,7 @@ namespace sep3client.timeslot {
       if (StartHour != 0) hash ^= StartHour.GetHashCode();
       if (StartMinute != 0) hash ^= StartMinute.GetHashCode();
       if (Duration != 0) hash ^= Duration.GetHashCode();
+      if (IsBooked != false) hash ^= IsBooked.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -696,6 +753,10 @@ namespace sep3client.timeslot {
         output.WriteRawTag(64);
         output.WriteInt32(Duration);
       }
+      if (IsBooked != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(IsBooked);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -738,6 +799,10 @@ namespace sep3client.timeslot {
         output.WriteRawTag(64);
         output.WriteInt32(Duration);
       }
+      if (IsBooked != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(IsBooked);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -771,6 +836,9 @@ namespace sep3client.timeslot {
       }
       if (Duration != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Duration);
+      }
+      if (IsBooked != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -807,6 +875,9 @@ namespace sep3client.timeslot {
       }
       if (other.Duration != 0) {
         Duration = other.Duration;
+      }
+      if (other.IsBooked != false) {
+        IsBooked = other.IsBooked;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -853,6 +924,10 @@ namespace sep3client.timeslot {
           }
           case 64: {
             Duration = input.ReadInt32();
+            break;
+          }
+          case 72: {
+            IsBooked = input.ReadBool();
             break;
           }
         }
@@ -902,6 +977,10 @@ namespace sep3client.timeslot {
             Duration = input.ReadInt32();
             break;
           }
+          case 72: {
+            IsBooked = input.ReadBool();
+            break;
+          }
         }
       }
     }
@@ -909,16 +988,16 @@ namespace sep3client.timeslot {
 
   }
 
-  public sealed partial class TimeSlotsGrpc : pb::IMessage<TimeSlotsGrpc>
+  public sealed partial class TimeSlotList : pb::IMessage<TimeSlotList>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<TimeSlotsGrpc> _parser = new pb::MessageParser<TimeSlotsGrpc>(() => new TimeSlotsGrpc());
+    private static readonly pb::MessageParser<TimeSlotList> _parser = new pb::MessageParser<TimeSlotList>(() => new TimeSlotList());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<TimeSlotsGrpc> Parser { get { return _parser; } }
+    public static pb::MessageParser<TimeSlotList> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -934,7 +1013,7 @@ namespace sep3client.timeslot {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public TimeSlotsGrpc() {
+    public TimeSlotList() {
       OnConstruction();
     }
 
@@ -942,15 +1021,15 @@ namespace sep3client.timeslot {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public TimeSlotsGrpc(TimeSlotsGrpc other) : this() {
+    public TimeSlotList(TimeSlotList other) : this() {
       timeSlots_ = other.timeSlots_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public TimeSlotsGrpc Clone() {
-      return new TimeSlotsGrpc(this);
+    public TimeSlotList Clone() {
+      return new TimeSlotList(this);
     }
 
     /// <summary>Field number for the "timeSlots" field.</summary>
@@ -967,12 +1046,12 @@ namespace sep3client.timeslot {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as TimeSlotsGrpc);
+      return Equals(other as TimeSlotList);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(TimeSlotsGrpc other) {
+    public bool Equals(TimeSlotList other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -1037,7 +1116,7 @@ namespace sep3client.timeslot {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(TimeSlotsGrpc other) {
+    public void MergeFrom(TimeSlotList other) {
       if (other == null) {
         return;
       }
@@ -1078,6 +1157,195 @@ namespace sep3client.timeslot {
             break;
           case 10: {
             timeSlots_.AddEntriesFrom(ref input, _repeated_timeSlots_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class courtId : pb::IMessage<courtId>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<courtId> _parser = new pb::MessageParser<courtId>(() => new courtId());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<courtId> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::sep3client.timeslot.TImeSlotServiceReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public courtId() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public courtId(courtId other) : this() {
+      courtId_ = other.courtId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public courtId Clone() {
+      return new courtId(this);
+    }
+
+    /// <summary>Field number for the "courtId" field.</summary>
+    public const int CourtIdFieldNumber = 1;
+    private int courtId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CourtId {
+      get { return courtId_; }
+      set {
+        courtId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as courtId);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(courtId other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (CourtId != other.CourtId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (CourtId != 0) hash ^= CourtId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (CourtId != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(CourtId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (CourtId != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(CourtId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (CourtId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(CourtId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(courtId other) {
+      if (other == null) {
+        return;
+      }
+      if (other.CourtId != 0) {
+        CourtId = other.CourtId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            CourtId = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            CourtId = input.ReadInt32();
             break;
           }
         }

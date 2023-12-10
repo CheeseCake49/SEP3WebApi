@@ -12,6 +12,7 @@ message CreatingTimeSlot{
   int32 startHour = 5;
   int32 startMinute = 6;
   int32 duration = 7;
+  bool isBooked = 8;
 }
 
 message TimeSlotGrpc{
@@ -23,12 +24,18 @@ message TimeSlotGrpc{
   int32 startHour = 6;
   int32 startMinute = 7;
   int32 duration = 8;
+  bool isBooked = 9;
 }
 
-message TimeSlotsGrpc{
-  repeated TimeSlotGrpc timeSlots = 1;
+message TimeSlotList{
+    repeated TimeSlotGrpc timeSlots = 1;
+}
+
+message courtId{
+  int32 courtId = 1;
 }
 
 service TimeSlotService{
   rpc CreateTimeSlot (CreatingTimeSlot) returns (TimeSlotGrpc);
+  rpc GetTimeSlotsFromCourtId (courtId) returns (TimeSlotList);
 }

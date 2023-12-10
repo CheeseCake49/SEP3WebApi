@@ -49,6 +49,10 @@ namespace sep3client.timeslot {
     static readonly grpc::Marshaller<global::sep3client.timeslot.CreatingTimeSlot> __Marshaller_sep3datalayer_grpc_protobuf_CreatingTimeSlot = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::sep3client.timeslot.CreatingTimeSlot.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::sep3client.timeslot.TimeSlotGrpc> __Marshaller_sep3datalayer_grpc_protobuf_TimeSlotGrpc = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::sep3client.timeslot.TimeSlotGrpc.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::sep3client.timeslot.courtId> __Marshaller_sep3datalayer_grpc_protobuf_courtId = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::sep3client.timeslot.courtId.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::sep3client.timeslot.TimeSlotList> __Marshaller_sep3datalayer_grpc_protobuf_TimeSlotList = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::sep3client.timeslot.TimeSlotList.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::sep3client.timeslot.CreatingTimeSlot, global::sep3client.timeslot.TimeSlotGrpc> __Method_CreateTimeSlot = new grpc::Method<global::sep3client.timeslot.CreatingTimeSlot, global::sep3client.timeslot.TimeSlotGrpc>(
@@ -57,6 +61,14 @@ namespace sep3client.timeslot {
         "CreateTimeSlot",
         __Marshaller_sep3datalayer_grpc_protobuf_CreatingTimeSlot,
         __Marshaller_sep3datalayer_grpc_protobuf_TimeSlotGrpc);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::sep3client.timeslot.courtId, global::sep3client.timeslot.TimeSlotList> __Method_GetTimeSlotsFromCourtId = new grpc::Method<global::sep3client.timeslot.courtId, global::sep3client.timeslot.TimeSlotList>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetTimeSlotsFromCourtId",
+        __Marshaller_sep3datalayer_grpc_protobuf_courtId,
+        __Marshaller_sep3datalayer_grpc_protobuf_TimeSlotList);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -70,6 +82,12 @@ namespace sep3client.timeslot {
     {
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::sep3client.timeslot.TimeSlotGrpc> CreateTimeSlot(global::sep3client.timeslot.CreatingTimeSlot request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::sep3client.timeslot.TimeSlotList> GetTimeSlotsFromCourtId(global::sep3client.timeslot.courtId request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -123,6 +141,26 @@ namespace sep3client.timeslot {
       {
         return CallInvoker.AsyncUnaryCall(__Method_CreateTimeSlot, null, options, request);
       }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::sep3client.timeslot.TimeSlotList GetTimeSlotsFromCourtId(global::sep3client.timeslot.courtId request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetTimeSlotsFromCourtId(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::sep3client.timeslot.TimeSlotList GetTimeSlotsFromCourtId(global::sep3client.timeslot.courtId request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetTimeSlotsFromCourtId, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::sep3client.timeslot.TimeSlotList> GetTimeSlotsFromCourtIdAsync(global::sep3client.timeslot.courtId request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetTimeSlotsFromCourtIdAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::sep3client.timeslot.TimeSlotList> GetTimeSlotsFromCourtIdAsync(global::sep3client.timeslot.courtId request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetTimeSlotsFromCourtId, null, options, request);
+      }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       protected override TimeSlotServiceClient NewInstance(ClientBaseConfiguration configuration)
@@ -137,7 +175,8 @@ namespace sep3client.timeslot {
     public static grpc::ServerServiceDefinition BindService(TimeSlotServiceBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_CreateTimeSlot, serviceImpl.CreateTimeSlot).Build();
+          .AddMethod(__Method_CreateTimeSlot, serviceImpl.CreateTimeSlot)
+          .AddMethod(__Method_GetTimeSlotsFromCourtId, serviceImpl.GetTimeSlotsFromCourtId).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -148,6 +187,7 @@ namespace sep3client.timeslot {
     public static void BindService(grpc::ServiceBinderBase serviceBinder, TimeSlotServiceBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_CreateTimeSlot, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::sep3client.timeslot.CreatingTimeSlot, global::sep3client.timeslot.TimeSlotGrpc>(serviceImpl.CreateTimeSlot));
+      serviceBinder.AddMethod(__Method_GetTimeSlotsFromCourtId, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::sep3client.timeslot.courtId, global::sep3client.timeslot.TimeSlotList>(serviceImpl.GetTimeSlotsFromCourtId));
     }
 
   }
