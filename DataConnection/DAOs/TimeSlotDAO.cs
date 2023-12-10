@@ -32,9 +32,19 @@ public class TimeSlotDAO : ITimeSlotDAO
         return ConvertToTimeSlot(createdTimeSlot);
     }
 
-    public async Task<TimeSlot> GetByCourtAsync(int courtId)
+    public async Task<List<TimeSlot>> GetTimeSlotsByCourt(int courtId)
     {
-        throw new NotImplementedException();
+        var timeSlots = await _timeSlotService.GetTimeSlotsFromCourtIdAsync(new courtId()
+        {
+            CourtId = courtId
+        });
+        List<TimeSlot> timeSlotList = new();
+        for (int i = 0; i < timeSlots.TimeSlots.Count; i++)
+        {
+            timeSlotList.Add(ConvertToTimeSlot(timeSlots.TimeSlots[i]));
+        }
+
+        return timeSlotList;
     }
 
     private TimeSlot ConvertToTimeSlot(TimeSlotGrpc timeSlot)

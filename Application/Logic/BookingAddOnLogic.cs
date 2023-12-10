@@ -8,12 +8,10 @@ namespace Application.Logic;
 public class BookingAddOnLogic : IBookingAddOnLogic
 {
     private readonly IBookingAddOnDAO _bookingAddOnDao;
-    private readonly IBookingLogic _bookingLogic;
     
-    public BookingAddOnLogic(IBookingAddOnDAO bookingAddOnDao, IBookingLogic bookingLogic)
+    public BookingAddOnLogic(IBookingAddOnDAO bookingAddOnDao)
     {
         _bookingAddOnDao = bookingAddOnDao;
-        _bookingLogic = bookingLogic;
     }
 
 

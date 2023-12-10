@@ -23,8 +23,8 @@ public class TimeSlotLogic : ITimeSlotLogic
         return await timeSlotDAO.CreateAsync(toCreate);
     }
 
-    public Task<TimeSlot> GetTimeSlotByCourtAsync(int courtId)
+    public async Task<List<TimeSlot>> GetTimeSlotsByCourtAsync(int courtId)
     {
-        return timeSlotDAO.GetByCourtAsync(courtId);
+        return await timeSlotDAO.GetTimeSlotsByCourt(courtId);
     }
 }

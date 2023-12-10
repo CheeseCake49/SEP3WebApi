@@ -17,7 +17,7 @@ public class TimeSlotController : ControllerBase
     }
     
     [HttpPost("/timeslot/{courtId:int}/{bookingTime:DateTime}")]
-    public async Task<ActionResult<TimeSlot>> CreateTimeSlotAsync([FromRoute] int courtId, [FromRoute] DateTime bookingTime, [FromBody] TimeSlotCreationDTO dto)
+    public async Task<ActionResult<TimeSlot>> CreateTimeSlotAsync([FromBody] TimeSlotCreationDTO dto)
     {
         try
         {
@@ -32,11 +32,11 @@ public class TimeSlotController : ControllerBase
     }
     
     [HttpGet("/timeslot/{courtId:int}")]
-    public async Task<ActionResult<TimeSlot>> GetTimeSlotByCourtIdAsync([FromBody] int courtId)
+    public async Task<ActionResult<TimeSlot>> GetTimeSlotsByCourtIdAsync([FromQuery] int courtId)
     {
         try
         {
-            TimeSlot timeSlot = await _timeSlotLogic.GetTimeSlotByCourtAsync(courtId);
+            List<TimeSlot> timeSlot = await _timeSlotLogic.GetTimeSlotsByCourtAsync(courtId);
             return Ok(timeSlot);
         }
         catch (Exception e)

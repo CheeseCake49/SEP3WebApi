@@ -23,6 +23,12 @@ builder.Services.AddScoped<ICourtLogic, CourtLogic>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserDAO, UserDAO>();
 builder.Services.AddScoped<IUserLogic, UserLogic>();
+builder.Services.AddScoped<IBookingDAO, BookingDAO>();
+builder.Services.AddScoped<IBookingLogic, BookingLogic>();
+builder.Services.AddScoped<IBookingAddOnDAO, BookingAddOnDAO>();
+builder.Services.AddScoped<IBookingAddOnLogic, BookingAddOnLogic>();
+builder.Services.AddScoped<ITimeSlotDAO, TimeSlotDAO>();
+builder.Services.AddScoped<ITimeSlotLogic, TimeSlotLogic>();
 
 AuthorizationPolicies.AddPolicies(builder.Services);
 

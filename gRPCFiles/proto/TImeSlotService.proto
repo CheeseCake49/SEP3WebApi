@@ -35,6 +35,8 @@ message courtId{
   int32 courtId = 1;
 }
 
+
+
 service TimeSlotService{
   rpc CreateTimeSlot (CreatingTimeSlot) returns (TimeSlotGrpc);
   rpc GetTimeSlotsFromCourtId (courtId) returns (TimeSlotList);
