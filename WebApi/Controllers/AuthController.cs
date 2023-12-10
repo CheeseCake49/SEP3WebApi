@@ -25,7 +25,7 @@ public class AuthController : ControllerBase
     
     private List<Claim> GenerateClaims(User user)
     {
-        var claims = new[]
+        List<Claim> claims = new()
         {
             new Claim(JwtRegisteredClaimNames.Sub, config["Jwt:Subject"]),
             new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
@@ -33,9 +33,20 @@ public class AuthController : ControllerBase
             new Claim(ClaimTypes.Name, user.Username),
             new Claim(ClaimTypes.Role, user.Role),
             new Claim("DisplayName", user.Name),
-            new Claim("Email", user.Email),
+            new Claim("Email", user.Email)
         };
-        return claims.ToList();
+
+        foreach (int centerId in authService.GetAdminnedCenters(user).Result)
+        {
+            claims.Add(new Claim($"Center{centerId}", centerId.ToString()));
+        }
+
+        foreach (var VARIABLE in claims) // TODO Remove this loop. Only for debugging
+        {
+            Console.WriteLine(VARIABLE.Type + ", " + VARIABLE.Value);
+        }
+        
+        return claims;
     }
     
     private string GenerateJwt(User user)

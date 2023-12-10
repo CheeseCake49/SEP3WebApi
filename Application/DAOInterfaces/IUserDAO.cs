@@ -7,5 +7,6 @@ public interface IUserDAO
     Task<User> CreateAsync(User user);
     Task<List<User>> GetAllUsersAsync();
     Task<List<User>> GetCenterAdminsAsync(int centerId);
+    Task<List<int>> GetAdminnedCenters(string username);
 
 }
