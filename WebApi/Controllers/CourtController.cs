@@ -1,7 +1,6 @@
 using Application.LogicInterfaces;
 using Grpc.Core;
 using Microsoft.AspNetCore.Mvc;
-using sep3client.court;
 using Shared.DTOs;
 using Shared.Models;
 

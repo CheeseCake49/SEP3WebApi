@@ -27,8 +27,7 @@ public class CenterController : ControllerBase
         }
         catch (Exception e)
         {
-            Console.WriteLine(e);
-            return StatusCode(500, e.Message);
+            return StatusCode(500, "Name is already in use");
         }
     }
     
@@ -59,6 +58,21 @@ public class CenterController : ControllerBase
         {
             var centers = await _centerLogic.GetAllCentersAsync();
             return Ok(centers);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(500, e.Message);
+        }
+    }
+
+    [HttpPost("/center/{id:int}/admins")]
+    public async Task<ActionResult<string>> AddCenterAdminAsync([FromRoute] int id, [FromBody] CenterAdminDTO dto)
+    {
+        try
+        {
+            CenterAdminDTO created = new(id, await _centerLogic.AddCenterAdminAsync(id, dto.username));
+            return Ok(created);
         }
         catch (Exception e)
         {

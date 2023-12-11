@@ -10,4 +10,5 @@ public interface ICenterLogic
     Task<IEnumerable<Center>> GetAllCentersAsync();
     Task<Center> UpdateAsync(CenterUpdatingDTO dto);
     Task<Center?> GetByIdAsync(int id);
+    Task<string> AddCenterAdminAsync(int centerId, string username);
 }

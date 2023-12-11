@@ -1,8 +1,7 @@
 ﻿using Application.DAOInterfaces;
 using Google.Protobuf.WellKnownTypes;
 using Grpc.Net.Client;
-using sep3client.center;
-using Shared.DTOs;
+using sep3client.proto;
 using Shared.Models;
 
 namespace DataConnection.DAOs;
@@ -63,7 +62,6 @@ public class CenterDAO : ICenterDAO
         }
         return centerList;
     }
-    
 
     public async Task<Center?> GetByIdAsync(int id)
     {
@@ -72,6 +70,15 @@ public class CenterDAO : ICenterDAO
             Id = id
         }));
         return existing;
+    }
+    public async Task<string> AddCenterAdminAsync(int centerId, string username)
+    {
+        UserUsername createdUsername = await _centerService.AddCenterAdminAsync(new CenterAdmin
+        {
+            CenterId = centerId,
+            Username = username
+        });
+        return createdUsername.Username;
     }
       
     private Center ConvertToCenter(CenterGrpc center)

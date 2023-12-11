@@ -30,5 +30,17 @@ public class UserController : ControllerBase
             return StatusCode(500, e.Message);
         }
     }
+
+    [HttpGet]
+    public async Task<ActionResult<List<User>>> GetAllUsersAsync()
+    {
+        return await _userLogic.GetAllUsers();
+    }
+
+    [HttpGet("/user/admins/{centerId:int}")]
+    public async Task<ActionResult<List<User>>> GetCenterAdminsAsync([FromRoute] int centerId)
+    {
+        return await _userLogic.GetCenterAdminsAsync(centerId);
+    }
     
 }

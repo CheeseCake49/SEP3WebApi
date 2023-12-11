@@ -1,7 +1,7 @@
 using Application.DAOInterfaces;
 using Grpc.Core;
 using Grpc.Net.Client;
-using sep3client.court;
+using sep3client.proto;
 using Shared.DTOs;
 using Shared.Models;
 

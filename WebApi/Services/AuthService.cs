@@ -33,4 +33,9 @@ public class AuthService : IAuthService
         return existingUser;
     }
 
+    public async Task<List<int>> GetAdminnedCenters(User user)
+    {
+        return await _userDao.GetAdminnedCenters(user.Username);
+    }
+
 }
