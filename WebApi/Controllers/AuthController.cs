@@ -36,10 +36,16 @@ public class AuthController : ControllerBase
             new Claim("Email", user.Email)
         };
 
-        foreach (int centerId in authService.GetAdminnedCenters(user).Result)
+        if (user.Role == "Customer")
         {
-            claims.Add(new Claim($"Center{centerId}", centerId.ToString()));
+            foreach (int centerId in authService.GetAdminnedCenters(user).Result)
+            {
+                claims.Add(new Claim($"Center{centerId}", centerId.ToString()));
+            }
         }
+        
+        
+        
 
         foreach (var VARIABLE in claims) // TODO Remove this loop. Only for debugging
         {
