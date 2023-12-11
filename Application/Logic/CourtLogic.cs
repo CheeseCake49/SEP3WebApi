@@ -42,17 +42,6 @@ public class CourtLogic : ICourtLogic
     {
         return await courtDAO.GetCourtsByCenterID(centerID);
     }
-
-    public async Task<Court?> GetByCenterIdAndCourtNumberAsync(int centerId, int courtNumber)
-    {
-        Court? existing = await courtDAO.GetByCenterIdAndCourtNumberAsync(centerId, courtNumber);
-        if (existing == null)
-        {
-            throw new Exception($"Court with center ID {centerId} and court number {courtNumber} doesn't exist!");
-        }
-
-        return existing;
-    }
     
     public async Task<Court?> GetByIdAsync(int id)
     {

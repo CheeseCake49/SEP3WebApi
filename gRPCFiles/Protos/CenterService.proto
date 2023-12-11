@@ -72,6 +72,13 @@ message CourtGrpc {
   string courtSponsor = 5;
 }
 
+message UpdatingCourt {
+  int32 id = 1;
+  string courtType = 2;
+  int32 courtNumber = 3;
+  string courtSponsor = 4;
+}
+
 message CourtList {
   repeated CourtGrpc court = 1;
 }
@@ -81,10 +88,17 @@ message CourtDeletion {
   int32 courtNumber = 2;
 }
 
+message CourtId {
+  int32 id = 1;
+}
+
 service CourtService {
   rpc CreateCourt(CreatingCourt) returns (CourtGrpc);
   rpc GetCourtsFromCenterId(CenterId) returns (CourtList);
   rpc DeleteCourtFromCenterId(CourtDeletion) returns (google.protobuf.Empty);
+  rpc UpdateCourt(UpdatingCourt) returns (CourtGrpc);
+  rpc GetByCenterIdAndCourtNumber(CourtDeletion) returns (CourtGrpc);
+  rpc GetById(CourtId) returns (CourtGrpc);
 }
 
 // Users
