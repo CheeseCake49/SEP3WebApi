@@ -34,12 +34,12 @@ namespace sep3client.timeslot {
             "ASgFEgsKA2RheRgFIAEoBRIRCglzdGFydEhvdXIYBiABKAUSEwoLc3RhcnRN",
             "aW51dGUYByABKAUSEAoIZHVyYXRpb24YCCABKAUSEAoIaXNCb29rZWQYCSAB",
             "KAgiTAoMVGltZVNsb3RMaXN0EjwKCXRpbWVTbG90cxgBIAMoCzIpLnNlcDNk",
-            "YXRhbGF5ZXIuZ3JwYy5wcm90b2J1Zi5UaW1lU2xvdEdycGMiGgoHY291cnRJ",
+            "YXRhbGF5ZXIuZ3JwYy5wcm90b2J1Zi5UaW1lU2xvdEdycGMiGgoHQ291cnRJ",
             "ZBIPCgdjb3VydElkGAEgASgFMukBCg9UaW1lU2xvdFNlcnZpY2USagoOQ3Jl",
             "YXRlVGltZVNsb3QSLS5zZXAzZGF0YWxheWVyLmdycGMucHJvdG9idWYuQ3Jl",
             "YXRpbmdUaW1lU2xvdBopLnNlcDNkYXRhbGF5ZXIuZ3JwYy5wcm90b2J1Zi5U",
             "aW1lU2xvdEdycGMSagoXR2V0VGltZVNsb3RzRnJvbUNvdXJ0SWQSJC5zZXAz",
-            "ZGF0YWxheWVyLmdycGMucHJvdG9idWYuY291cnRJZBopLnNlcDNkYXRhbGF5",
+            "ZGF0YWxheWVyLmdycGMucHJvdG9idWYuQ291cnRJZBopLnNlcDNkYXRhbGF5",
             "ZXIuZ3JwYy5wcm90b2J1Zi5UaW1lU2xvdExpc3RCGFABqgITc2VwM2NsaWVu",
             "dC50aW1lc2xvdGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
@@ -48,7 +48,7 @@ namespace sep3client.timeslot {
             new pbr::GeneratedClrTypeInfo(typeof(global::sep3client.timeslot.CreatingTimeSlot), global::sep3client.timeslot.CreatingTimeSlot.Parser, new[]{ "CourtId", "Year", "Month", "Day", "StartHour", "StartMinute", "Duration", "IsBooked" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::sep3client.timeslot.TimeSlotGrpc), global::sep3client.timeslot.TimeSlotGrpc.Parser, new[]{ "Id", "CourtId", "Year", "Month", "Day", "StartHour", "StartMinute", "Duration", "IsBooked" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::sep3client.timeslot.TimeSlotList), global::sep3client.timeslot.TimeSlotList.Parser, new[]{ "TimeSlots" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::sep3client.timeslot.courtId), global::sep3client.timeslot.courtId.Parser, new[]{ "CourtId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::sep3client.timeslot.CourtId), global::sep3client.timeslot.CourtId.Parser, new[]{ "CourtId_" }, null, null, null, null)
           }));
     }
     #endregion
@@ -1166,16 +1166,16 @@ namespace sep3client.timeslot {
 
   }
 
-  public sealed partial class courtId : pb::IMessage<courtId>
+  public sealed partial class CourtId : pb::IMessage<CourtId>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<courtId> _parser = new pb::MessageParser<courtId>(() => new courtId());
+    private static readonly pb::MessageParser<CourtId> _parser = new pb::MessageParser<CourtId>(() => new CourtId());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<courtId> Parser { get { return _parser; } }
+    public static pb::MessageParser<CourtId> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1191,7 +1191,7 @@ namespace sep3client.timeslot {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public courtId() {
+    public CourtId() {
       OnConstruction();
     }
 
@@ -1199,23 +1199,23 @@ namespace sep3client.timeslot {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public courtId(courtId other) : this() {
+    public CourtId(CourtId other) : this() {
       courtId_ = other.courtId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public courtId Clone() {
-      return new courtId(this);
+    public CourtId Clone() {
+      return new CourtId(this);
     }
 
     /// <summary>Field number for the "courtId" field.</summary>
-    public const int CourtIdFieldNumber = 1;
+    public const int CourtId_FieldNumber = 1;
     private int courtId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int CourtId {
+    public int CourtId_ {
       get { return courtId_; }
       set {
         courtId_ = value;
@@ -1225,19 +1225,19 @@ namespace sep3client.timeslot {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as courtId);
+      return Equals(other as CourtId);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(courtId other) {
+    public bool Equals(CourtId other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (CourtId != other.CourtId) return false;
+      if (CourtId_ != other.CourtId_) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1245,7 +1245,7 @@ namespace sep3client.timeslot {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (CourtId != 0) hash ^= CourtId.GetHashCode();
+      if (CourtId_ != 0) hash ^= CourtId_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1264,9 +1264,9 @@ namespace sep3client.timeslot {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (CourtId != 0) {
+      if (CourtId_ != 0) {
         output.WriteRawTag(8);
-        output.WriteInt32(CourtId);
+        output.WriteInt32(CourtId_);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -1278,9 +1278,9 @@ namespace sep3client.timeslot {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (CourtId != 0) {
+      if (CourtId_ != 0) {
         output.WriteRawTag(8);
-        output.WriteInt32(CourtId);
+        output.WriteInt32(CourtId_);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -1292,8 +1292,8 @@ namespace sep3client.timeslot {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (CourtId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(CourtId);
+      if (CourtId_ != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(CourtId_);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1303,12 +1303,12 @@ namespace sep3client.timeslot {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(courtId other) {
+    public void MergeFrom(CourtId other) {
       if (other == null) {
         return;
       }
-      if (other.CourtId != 0) {
-        CourtId = other.CourtId;
+      if (other.CourtId_ != 0) {
+        CourtId_ = other.CourtId_;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1326,7 +1326,7 @@ namespace sep3client.timeslot {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            CourtId = input.ReadInt32();
+            CourtId_ = input.ReadInt32();
             break;
           }
         }
@@ -1345,7 +1345,7 @@ namespace sep3client.timeslot {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            CourtId = input.ReadInt32();
+            CourtId_ = input.ReadInt32();
             break;
           }
         }

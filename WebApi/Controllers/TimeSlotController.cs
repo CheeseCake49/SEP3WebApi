@@ -32,7 +32,7 @@ public class TimeSlotController : ControllerBase
     }
     
     [HttpGet("/timeslot/{courtId:int}")]
-    public async Task<ActionResult<TimeSlot>> GetTimeSlotsByCourtIdAsync([FromQuery] int courtId)
+    public async Task<ActionResult<TimeSlot>> GetTimeSlotsByCourtIdAsync([FromRoute] int courtId)
     {
         try
         {

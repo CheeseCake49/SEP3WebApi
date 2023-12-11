@@ -34,9 +34,9 @@ public class TimeSlotDAO : ITimeSlotDAO
 
     public async Task<List<TimeSlot>> GetTimeSlotsByCourt(int courtId)
     {
-        var timeSlots = await _timeSlotService.GetTimeSlotsFromCourtIdAsync(new courtId()
+        var timeSlots = await _timeSlotService.GetTimeSlotsFromCourtIdAsync(new CourtId()
         {
-            CourtId = courtId
+            CourtId_ = courtId
         });
         List<TimeSlot> timeSlotList = new();
         for (int i = 0; i < timeSlots.TimeSlots.Count; i++)
