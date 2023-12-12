@@ -1,7 +1,6 @@
 using Application.LogicInterfaces;
 using Grpc.Core;
 using Microsoft.AspNetCore.Mvc;
-using sep3client.court;
 using Shared.DTOs;
 using Shared.Models;
 
@@ -56,6 +55,26 @@ public class CourtController : ControllerBase
         {
             await _courtLogic.DeleteAsync(centerId, courtNumber);
             return Ok();
+        }
+        catch (RpcException e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(500, e.Status.Detail);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(500, e.Message);
+        }
+    }
+    
+    [HttpPatch]
+    public async Task<ActionResult<Court>> UpdateAsync(CourtUpdatingDTO dto)
+    {
+        try
+        {
+            Court court = await _courtLogic.UpdateAsync(dto);
+            return Ok(court);
         }
         catch (RpcException e)
         {

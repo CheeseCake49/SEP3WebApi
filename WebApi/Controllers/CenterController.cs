@@ -1,4 +1,5 @@
 ﻿using Application.LogicInterfaces;
+using Grpc.Core;
 using Microsoft.AspNetCore.Mvc;
 using Shared.DTOs;
 using Shared.Models;
@@ -26,6 +27,25 @@ public class CenterController : ControllerBase
         }
         catch (Exception e)
         {
+            return StatusCode(500, "Name is already in use");
+        }
+    }
+    
+    [HttpDelete("/center/{id:int}")]
+    public async Task<ActionResult> DeleteAsync([FromRoute] int id)
+    {
+        try
+        {
+            await _centerLogic.DeleteAsync(id);
+            return Ok();
+        }
+        catch (RpcException e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(500, e.Status.Detail);
+        }
+        catch (Exception e)
+        {
             Console.WriteLine(e);
             return StatusCode(500, e.Message);
         }
@@ -38,6 +58,59 @@ public class CenterController : ControllerBase
         {
             var centers = await _centerLogic.GetAllCentersAsync();
             return Ok(centers);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(500, e.Message);
+        }
+    }
+
+    [HttpPost("/center/{id:int}/admins")]
+    public async Task<ActionResult<string>> AddCenterAdminAsync([FromRoute] int id, [FromBody] CenterAdminDTO dto)
+    {
+        try
+        {
+            CenterAdminDTO created = new(id, await _centerLogic.AddCenterAdminAsync(id, dto.username));
+            return Ok(created);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(500, e.Message);
+        }
+    }
+
+    [HttpPatch]
+    public async Task<ActionResult<Center>> UpdateAsync(CenterUpdatingDTO dto)
+    {
+        try
+        {
+            Center center = await _centerLogic.UpdateAsync(dto);
+            return Ok(center);
+        }
+        catch (RpcException e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(500, e.Status.Detail);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(500, e.Message);
+        }
+    }
+
+    [HttpGet("{id:int}")]
+    public async Task<ActionResult<Center?>> GetByIdAsync([FromRoute] int id)
+    {
+        try
+        {
+            return await _centerLogic.GetByIdAsync(id);
+        } catch (RpcException e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(500, e.Status.Detail);
         }
         catch (Exception e)
         {

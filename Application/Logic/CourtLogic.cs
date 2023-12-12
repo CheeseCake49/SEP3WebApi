@@ -16,8 +16,7 @@ public class CourtLogic : ICourtLogic
 
     public async Task<Court> CreateAsync(int CenterId, CourtCreationDTO courtToCreate)
     {
-        Court toCreate = new Court(CenterId, courtToCreate.CourtType, courtToCreate.CourtNumber,
-            courtToCreate.CourtSponsor);
+        Court toCreate = new Court(CenterId, courtToCreate.CourtType, courtToCreate.CourtNumber, courtToCreate.CourtSponsor ?? "");
         Court created = await courtDAO.CreateAsync(toCreate);
 
         DateTime startTime = DateTime.Today.AddHours(6);
@@ -26,12 +25,11 @@ public class CourtLogic : ICourtLogic
         {
             for (int i = 0; i < 36; i++)
             {
-                timeSlots.Add(new TimeSlot(created.Id, startTime, 30, false));
+                timeSlots.Add(new TimeSlot(created.Id, startTime, 30, false, 100));
                 startTime = startTime.AddMinutes(30);
             }
 
-            startTime.AddDays(1);
-            startTime.AddHours(6);
+            startTime= startTime.AddHours(6);
         }
 
         return created;
@@ -42,11 +40,32 @@ public class CourtLogic : ICourtLogic
         await courtDAO.DeleteAsync(centerId, courtNumber);
     }
 
-    
+    public async Task<Court> UpdateAsync(CourtUpdatingDTO dto)
+    {
+        Court? existing = await courtDAO.GetByCenterIdAndCourtNumberAsync(dto.centerId, dto.courtNumber);
+        if (existing != null && existing.Id != dto.id)
+        {
+            throw new Exception($"Court with number {dto.courtNumber} already exist! {dto.id} {existing.Id}");
+        }
+        
+        Court court = await courtDAO.UpdateAsync(dto);
+        return court;
+    }
 
     public async Task<List<Court>> GetCourtsByCenterID(int centerID)
     {
         return await courtDAO.GetCourtsByCenterID(centerID);
+    }
+    
+    public async Task<Court?> GetByIdAsync(int id)
+    {
+        Court? existing = await courtDAO.GetByIdAsync(id);
+        if (existing == null)
+        {
+            throw new Exception($"Court with ID {id} doesn't exist!");
+        }
+
+        return existing;
     }
     
 }

@@ -1,7 +1,8 @@
 ﻿using Application.DAOInterfaces;
 using Google.Protobuf.WellKnownTypes;
 using Grpc.Net.Client;
-using sep3client.center;
+using sep3client.proto;
+using Shared.DTOs;
 using Shared.Models;
 
 namespace DataConnection.DAOs;
@@ -30,6 +31,29 @@ public class CenterDAO : ICenterDAO
         return ConvertToCenter(createdCenter);
     }
 
+    public async Task DeleteAsync(int id)
+    {
+        await _centerService.DeleteCenterAsync(new CenterId()
+        {
+            Id = id
+        });
+    }
+
+    public async Task<Center> UpdateAsync(CenterUpdatingDTO dto)
+    {
+        CenterGrpc centerGrpc = await _centerService.UpdateCenterAsync(new UpdatingCenter()
+        {
+            Id = dto.id,
+            Name = dto.CenterName,
+            ZipCode = dto.ZipCode,
+            City = dto.City,
+            Address = dto.Address
+        });
+
+        Center center = ConvertToCenter(centerGrpc);
+        return center;
+    }
+
     public async Task<List<Center>> GetAllCentersAsync()
     {
         var centers = await _centerService.GetCentersAsync(new Empty());
@@ -39,16 +63,24 @@ public class CenterDAO : ICenterDAO
         }
         return centerList;
     }
-    
 
-    public Task<Center?> GetByNameAsync(string name)
-      {
-          return null;
-          // Center? existing = _centerService.FirstOrDefault(c =>
-          //     c.Name.Equals(name, StringComparison.OrdinalIgnoreCase)
-          // );
-          // return Task.FromResult(existing);
-      }
+    public async Task<Center?> GetByIdAsync(int id)
+    {
+        Center? existing = ConvertToCenter(await _centerService.GetByIdAsync(new CenterId()
+        {
+            Id = id
+        }));
+        return existing;
+    }
+    public async Task<string> AddCenterAdminAsync(int centerId, string username)
+    {
+        UserUsername createdUsername = await _centerService.AddCenterAdminAsync(new CenterAdmin
+        {
+            CenterId = centerId,
+            Username = username
+        });
+        return createdUsername.Username;
+    }
       
     private Center ConvertToCenter(CenterGrpc center)
     {
