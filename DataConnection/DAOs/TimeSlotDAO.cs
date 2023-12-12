@@ -1,6 +1,6 @@
 using Application.DAOInterfaces;
 using Grpc.Net.Client;
-using sep3client.timeslot;
+using sep3client.proto;
 using Shared.Models;
 
 namespace DataConnection.DAOs;
@@ -20,14 +20,15 @@ public class TimeSlotDAO : ITimeSlotDAO
     {
         TimeSlotGrpc createdTimeSlot = await _timeSlotService.CreateTimeSlotAsync(new CreatingTimeSlot()
         {
-            CourtId = timeSlot.courtId,
-            Year = timeSlot.startTime.Year,
-            Month = timeSlot.startTime.Month,
-            Day = timeSlot.startTime.Day,
-            StartHour = timeSlot.startTime.Hour,
-            StartMinute = timeSlot.startTime.Minute,
-            Duration = timeSlot.duration,
-            IsBooked = timeSlot.isBooked
+            CourtId = timeSlot.CourtId,
+            Year = timeSlot.StartTime.Year,
+            Month = timeSlot.StartTime.Month,
+            Day = timeSlot.StartTime.Day,
+            StartHour = timeSlot.StartTime.Hour,
+            StartMinute = timeSlot.StartTime.Minute,
+            Duration = timeSlot.Duration,
+            IsBooked = timeSlot.IsBooked,
+            Price = timeSlot.Price
         });
         return ConvertToTimeSlot(createdTimeSlot);
     }
@@ -36,7 +37,7 @@ public class TimeSlotDAO : ITimeSlotDAO
     {
         var timeSlots = await _timeSlotService.GetTimeSlotsFromCourtIdAsync(new CourtId()
         {
-            CourtId_ = courtId
+            Id = courtId
         });
         List<TimeSlot> timeSlotList = new();
         for (int i = 0; i < timeSlots.TimeSlots.Count; i++)
@@ -47,15 +48,33 @@ public class TimeSlotDAO : ITimeSlotDAO
         return timeSlotList;
     }
 
-    private TimeSlot ConvertToTimeSlot(TimeSlotGrpc timeSlot)
+    public TimeSlot ConvertToTimeSlot(TimeSlotGrpc timeSlot)
     {
         return new TimeSlot()
         {
             Id = timeSlot.Id,
-            courtId = timeSlot.CourtId,
-            startTime = convertToDateTime(timeSlot.Year, timeSlot.Month, timeSlot.Day, timeSlot.StartHour, timeSlot.StartMinute),
-            duration = timeSlot.Duration,
-            isBooked = timeSlot.IsBooked
+            CourtId = timeSlot.CourtId,
+            StartTime = convertToDateTime(timeSlot.Year, timeSlot.Month, timeSlot.Day, timeSlot.StartHour, timeSlot.StartMinute),
+            Duration = timeSlot.Duration,
+            IsBooked = timeSlot.IsBooked,
+            Price = timeSlot.Price
+        };
+    }
+
+    public TimeSlotGrpc ConvertToTimeSlotGrpc(TimeSlot timeSlot)
+    {
+        return new TimeSlotGrpc
+        {
+            Id = timeSlot.Id,
+            CourtId = timeSlot.CourtId,
+            Year = timeSlot.StartTime.Year,
+            Month = timeSlot.StartTime.Month,
+            Day = timeSlot.StartTime.Day,
+            StartHour = timeSlot.StartTime.Hour,
+            StartMinute = timeSlot.StartTime.Minute,
+            Duration = timeSlot.Duration,
+            IsBooked = timeSlot.IsBooked,
+            Price = timeSlot.Price
         };
     }
     

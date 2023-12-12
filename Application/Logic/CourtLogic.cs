@@ -42,10 +42,10 @@ public class CourtLogic : ICourtLogic
 
     public async Task<Court> UpdateAsync(CourtUpdatingDTO dto)
     {
-        Court? existing = await courtDAO.GetByCenterIdAndCourtNumberAsync(dto.centerId, dto.courtNumber);
-        if (existing != null && existing.Id != dto.id)
+        Court? existing = await courtDAO.GetByCenterIdAndCourtNumberAsync(dto.CenterId, dto.CourtNumber);
+        if (existing != null && existing.Id != dto.Id)
         {
-            throw new Exception($"Court with number {dto.courtNumber} already exist! {dto.id} {existing.Id}");
+            throw new Exception($"Court with number {dto.CourtNumber} already exist! {dto.Id} {existing.Id}");
         }
         
         Court court = await courtDAO.UpdateAsync(dto);

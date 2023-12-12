@@ -16,20 +16,20 @@ public class TimeSlotController : ControllerBase
         _timeSlotLogic = timeSlotLogic;
     }
     
-    [HttpPost("/timeslot/{courtId:int}/{bookingTime:DateTime}")]
-    public async Task<ActionResult<TimeSlot>> CreateTimeSlotAsync([FromBody] TimeSlotCreationDTO dto)
-    {
-        try
-        {
-            TimeSlot timeSlot = await _timeSlotLogic.CreateTimeSlotAsync(dto);
-            return Created($"/TimeSlot/{timeSlot.Id}", timeSlot);
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            return StatusCode(500, e.Message);
-        }
-    }
+    // [HttpPost("/timeslot/{courtId:int}/{bookingTime:DateTime}")]
+    // public async Task<ActionResult<TimeSlot>> CreateTimeSlotAsync([FromBody] TimeSlotCreationDTO dto)
+    // {
+    //     try
+    //     {
+    //         TimeSlot timeSlot = await _timeSlotLogic.CreateTimeSlotAsync(dto);
+    //         return Created($"/TimeSlot/{timeSlot.Id}", timeSlot);
+    //     }
+    //     catch (Exception e)
+    //     {
+    //         Console.WriteLine(e);
+    //         return StatusCode(500, e.Message);
+    //     }
+    // }
     
     [HttpGet("/timeslot/{courtId:int}")]
     public async Task<ActionResult<TimeSlot>> GetTimeSlotsByCourtIdAsync([FromRoute] int courtId)

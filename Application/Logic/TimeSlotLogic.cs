@@ -18,7 +18,7 @@ public class TimeSlotLogic : ITimeSlotLogic
 
     public async Task<TimeSlot> CreateTimeSlotAsync(TimeSlotCreationDTO timeSlotToCreate)
     {
-        TimeSlot toCreate = new TimeSlot(timeSlotToCreate.courtId, timeSlotToCreate.startTime, timeSlotToCreate.duration, timeSlotToCreate.isBooked);
+        TimeSlot toCreate = new TimeSlot(timeSlotToCreate.CourtId, timeSlotToCreate.StartTime, timeSlotToCreate.Duration, timeSlotToCreate.IsBooked, timeSlotToCreate.Price);
         
         return await timeSlotDAO.CreateAsync(toCreate);
     }

@@ -43,10 +43,10 @@ public class CenterLogic : ICenterLogic
 
     public async Task<Center> UpdateAsync(CenterUpdatingDTO dto)
     {
-        Center? existing = await _centerDao.GetByIdAsync(dto.id);
+        Center? existing = await _centerDao.GetByIdAsync(dto.Id);
         if (existing == null)
         {
-            throw new Exception($"Center with ID {dto.id} doesn't exist!");
+            throw new Exception($"Center with ID {dto.Id} doesn't exist!");
         }
 
         Center center = await _centerDao.UpdateAsync(dto);

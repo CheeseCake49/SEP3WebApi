@@ -43,7 +43,7 @@ public class CenterDAO : ICenterDAO
     {
         CenterGrpc centerGrpc = await _centerService.UpdateCenterAsync(new UpdatingCenter()
         {
-            Id = dto.id,
+            Id = dto.Id,
             Name = dto.CenterName,
             ZipCode = dto.ZipCode,
             City = dto.City,

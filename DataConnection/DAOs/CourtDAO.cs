@@ -58,10 +58,10 @@ public class CourtDAO : ICourtDAO
     {
         CourtGrpc courtGrpc = await _courtService.UpdateCourtAsync(new UpdatingCourt()
         {
-            Id = dto.id,
-            CourtType = dto.courtType,
-            CourtNumber = dto.courtNumber,
-            CourtSponsor = dto.courtSponsor
+            Id = dto.Id,
+            CourtType = dto.CourtType,
+            CourtNumber = dto.CourtNumber,
+            CourtSponsor = dto.CourtSponsor
         });
         
         return ConvertToCourt(courtGrpc);

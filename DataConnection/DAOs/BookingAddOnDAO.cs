@@ -1,8 +1,6 @@
 using Application.DAOInterfaces;
-using Application.LogicInterfaces;
 using Grpc.Net.Client;
-using sep3client.bookingaddon;
-using Shared.DTOs;
+using sep3client.proto;
 using Shared.Models;
 
 namespace DataConnection.DAOs;

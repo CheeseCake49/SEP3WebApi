@@ -71,7 +71,7 @@ public class CenterController : ControllerBase
     {
         try
         {
-            CenterAdminDTO created = new(id, await _centerLogic.AddCenterAdminAsync(id, dto.username));
+            CenterAdminDTO created = new(id, await _centerLogic.AddCenterAdminAsync(id, dto.Username));
             return Ok(created);
         }
         catch (Exception e)

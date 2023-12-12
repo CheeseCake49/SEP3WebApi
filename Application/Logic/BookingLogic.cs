@@ -20,7 +20,7 @@ public class BookingLogic : IBookingLogic
 
     public async Task<Booking> CreateBookingAsync(BookingCreationDTO bookingToCreate)
     {
-        Booking toCreate = new Booking(bookingToCreate.Username, bookingToCreate.TotalPrice);
+        Booking toCreate = new Booking(bookingToCreate.Username, bookingToCreate.TotalPrice, bookingToCreate.TimeSlots);
         Booking created = await _bookingDao.CreateAsync(toCreate);
 
         if (bookingToCreate.BookingAddOns != null)
