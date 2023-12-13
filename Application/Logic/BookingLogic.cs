@@ -28,7 +28,7 @@ public class BookingLogic : IBookingLogic
             List<BookingAddOn> bookingAddOns = new List<BookingAddOn>();
             foreach (BookingAddOnCreationDTO bookingAddOnToCreate in bookingToCreate.BookingAddOns)
             {
-                bookingAddOns.Add(await _bookingAddOnLogic.CreateBookingAddOnAsync(bookingAddOnToCreate));
+                bookingAddOns.Add(await _bookingAddOnLogic.CreateBookingAddOnAsync(bookingAddOnToCreate, created.Id));
             }
 
             created.BookingAddOns = bookingAddOns;

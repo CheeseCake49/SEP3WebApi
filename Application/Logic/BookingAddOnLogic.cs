@@ -15,9 +15,9 @@ public class BookingAddOnLogic : IBookingAddOnLogic
     }
 
 
-    public async Task<BookingAddOn> CreateBookingAddOnAsync(BookingAddOnCreationDTO bookingAddOnToCreate)
+    public async Task<BookingAddOn> CreateBookingAddOnAsync(BookingAddOnCreationDTO bookingAddOnToCreate, int bookingId)
     {
-        BookingAddOn toCreate = new BookingAddOn(bookingAddOnToCreate.BookingId, bookingAddOnToCreate.Name, 
+        BookingAddOn toCreate = new BookingAddOn(bookingId, bookingAddOnToCreate.Name, 
             bookingAddOnToCreate.Price, bookingAddOnToCreate.Quantity);
         return await _bookingAddOnDao.CreateAsync(toCreate);
     }

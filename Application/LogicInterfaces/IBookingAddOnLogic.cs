@@ -5,5 +5,5 @@ namespace Application.LogicInterfaces;
 
 public interface IBookingAddOnLogic
 {
-    Task<BookingAddOn> CreateBookingAddOnAsync(BookingAddOnCreationDTO bookingAddOnToCreate);
+    Task<BookingAddOn> CreateBookingAddOnAsync(BookingAddOnCreationDTO bookingAddOnToCreate, int bookingId);
 }
