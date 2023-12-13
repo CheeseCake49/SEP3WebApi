@@ -15,12 +15,12 @@ public class CenterTests
     {
         ICenterDAO centerDao = new CenterDAO();
         ICourtDAO courtDao = new CourtDAO();
-        CourtLogic courtLogic = new CourtLogic(courtDao);
+        ITimeSlotDAO timeSlotDao = new TimeSlotDAO();
+        ITimeSlotLogic timeSlotLogic = new TimeSlotLogic(timeSlotDao);
+        CourtLogic courtLogic = new CourtLogic(courtDao, timeSlotLogic);
         CenterLogic centerLogic = new CenterLogic(centerDao, courtLogic);
 
         CenterCreationDTO centerCreationDto = new CenterCreationDTO("Smash", 8700, "Horsens", "Vimmersvej 3", null);
-        
-        
     }
 
     [TestMethod]

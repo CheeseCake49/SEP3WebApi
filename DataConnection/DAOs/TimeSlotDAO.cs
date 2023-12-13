@@ -33,6 +33,33 @@ public class TimeSlotDAO : ITimeSlotDAO
         return ConvertToTimeSlot(createdTimeSlot);
     }
 
+    public async Task<List<TimeSlot>> CreateManyAsync(List<TimeSlot> timeSlots)
+    {
+        List<CreatingTimeSlot> creatingTimeSlots = timeSlots.Select(t => new CreatingTimeSlot
+        {
+            CourtId = t.CourtId,
+            Year = t.StartTime.Year,
+            Month = t.StartTime.Month,
+            Day = t.StartTime.Day,
+            StartHour = t.StartTime.Hour,
+            StartMinute = t.StartTime.Minute,
+            Duration = t.Duration,
+            IsBooked = t.IsBooked,
+            Price = t.Price
+        }).ToList();
+
+        CreatingTimeSlotList creatingTimeSlotList = new();
+
+        foreach (var t in creatingTimeSlots)
+        {
+            creatingTimeSlotList.TimeSlots.Add(t);
+        }
+
+        TimeSlotList createdTimeSlots = await _timeSlotService.CreateManyTimeSlotsAsync(creatingTimeSlotList);
+        
+        return createdTimeSlots.TimeSlots.Select(t => ConvertToTimeSlot(t)).ToList();
+    }
+
     public async Task<List<TimeSlot>> GetTimeSlotsByCourt(int courtId)
     {
         var timeSlots = await _timeSlotService.GetTimeSlotsFromCourtIdAsync(new CourtId()

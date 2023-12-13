@@ -22,18 +22,21 @@ public class CourtLogic : ICourtLogic
         Court created = await _courtDao.CreateAsync(toCreate);
 
         DateTime startTime = DateTime.Today.AddHours(6);
-        List<TimeSlot> timeSlots = new List<TimeSlot>();
+        List<TimeSlot> timeSlots = new();
+        List<TimeSlotCreationDTO> timeSlotsToCreate = new();
         for (int j = 0; j < 3; j++)
         {
             for (int i = 0; i < 36; i++)
             {
-                timeSlots.Add(await _timeSlotLogic.CreateTimeSlotAsync(new TimeSlotCreationDTO(created.Id, startTime, 30, false, 100)));
+                timeSlotsToCreate.Add(new TimeSlotCreationDTO(created.Id, startTime, 30, false, 100));
+                //timeSlots.Add(await _timeSlotLogic.CreateTimeSlotAsync(new TimeSlotCreationDTO(created.Id, startTime, 30, false, 100)));
                 startTime = startTime.AddMinutes(30);
             }
 
             startTime= startTime.AddHours(6);
         }
 
+        timeSlots = await _timeSlotLogic.CreateManyTimeSlotsAsync(timeSlotsToCreate);
         created.TimeSlots = timeSlots;
 
         return created;
