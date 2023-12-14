@@ -44,14 +44,6 @@ public class AuthController : ControllerBase
             }
         }
         
-        
-        
-
-        foreach (var VARIABLE in claims) // TODO Remove this loop. Only for debugging
-        {
-            Console.WriteLine(VARIABLE.Type + ", " + VARIABLE.Value);
-        }
-        
         return claims;
     }
     

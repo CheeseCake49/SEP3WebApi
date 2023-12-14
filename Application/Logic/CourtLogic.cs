@@ -24,12 +24,11 @@ public class CourtLogic : ICourtLogic
         DateTime startTime = DateTime.Today.AddHours(6);
         List<TimeSlot> timeSlots = new();
         List<TimeSlotCreationDTO> timeSlotsToCreate = new();
-        for (int j = 0; j < 3; j++)
+        for (int j = 0; j < 40; j++)
         {
             for (int i = 0; i < 36; i++)
             {
                 timeSlotsToCreate.Add(new TimeSlotCreationDTO(created.Id, startTime, 30, false, 100));
-                //timeSlots.Add(await _timeSlotLogic.CreateTimeSlotAsync(new TimeSlotCreationDTO(created.Id, startTime, 30, false, 100)));
                 startTime = startTime.AddMinutes(30);
             }
 
@@ -37,7 +36,7 @@ public class CourtLogic : ICourtLogic
         }
 
         timeSlots = await _timeSlotLogic.CreateManyTimeSlotsAsync(timeSlotsToCreate);
-        created.TimeSlots = timeSlots;
+        created.TimeSlots = timeSlots; // Empty List. Should be removed, as it is no longer needed after optimizations
 
         return created;
     }
